@@ -1,0 +1,29 @@
+.navbar {
+  width: 100vw;
+  height: 6.25rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font: {
+      size: 4rem;
+      family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    }
+    transition: 0.5s;
+  }
+}
+.navbarFix {
+  position: fixed;
+  height: 3.125rem;
+  background-color: rgba($color: #ffffff, $alpha: 0.8);
+
+  span {
+    font-size: 2rem;
+  }
+}
+.content {
+  height: 200vh;
+}
