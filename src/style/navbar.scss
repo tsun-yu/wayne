@@ -18,7 +18,7 @@
 .navbarFix {
   position: fixed;
   height: 3.125rem;
-  background-color: rgba($color: #ffffff, $alpha: 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 
   span {
     font-size: 2rem;
@@ -26,4 +26,20 @@
 }
 .content {
   height: 200vh;
+}
+
+@media (max-width: 540px) {
+  .navbar {
+    height: 3.125rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: start;
+    position: fixed;
+
+    span {
+      font: {
+        size: 2rem;
+      }
+      margin-left: 1rem;
+    }
+  }
 }
