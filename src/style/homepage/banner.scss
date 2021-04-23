@@ -1,0 +1,41 @@
+// .banner{
+
+// }
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-image: url(../../images/nyc.jpg);
+  font-family: "Trebuchet MS", "Noto Sans TC";
+
+  .dark-cover {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .hpTitle {
+      color: #ffffff;
+      font-size: 5rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 2px #555;
+    }
+    .smallword {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        color: #ffffffd0;
+        font-size: 1.125rem;
+        text-align: center;
+      }
+      span:nth-child(2) {
+        color: #fdc300;
+      }
+    }
+  }
+}
