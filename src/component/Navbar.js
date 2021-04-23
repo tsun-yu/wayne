@@ -15,7 +15,6 @@ function Navbar(props) {
       <header className="navbar">
         <span>WAYNE</span>
       </header>
-      <div className="content"></div>
     </>
   );
 }
