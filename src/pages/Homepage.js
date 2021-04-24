@@ -1,4 +1,5 @@
 import React from "react";
+import AboutMe from "../component/AboutMe";
 import Banner from "../component/Banner";
 
 function Homepage(props) {
@@ -6,6 +7,7 @@ function Homepage(props) {
     <>
       <main>
         <Banner />
+        <AboutMe />
       </main>
     </>
   );
