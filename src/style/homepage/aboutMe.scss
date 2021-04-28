@@ -1,41 +1,44 @@
 .about {
-  background-color: #fdc300;
-  padding: 5% 0;
-  height: 20rem;
+  margin: 2rem auto;
+  width: 90vw;
+  background-color: #ffffffcc;
+  padding: 2rem 0;
+  border-radius: 2.5rem;
 
   .topic {
     font-size: 3rem;
-    color: #fff;
+    color: #333;
     text-align: center;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     font-family: "Trebuchet MS", "Noto Sans TC";
   }
-  hr {
-    background-color: #fff;
-  }
+
   .aboutContent {
     text-align: center;
     h1 {
       font-size: 1.5rem;
-      color: #fff;
+      color: #fdc300;
       font-weight: 500;
     }
     .introduction {
       font-size: 1.25rem;
       padding: 0 6rem;
-      color: #fff;
-      margin: 2rem;
+      color: #333;
+      margin: 2rem 2rem 0 2rem;
     }
   }
 }
 @media (max-width: 540px) {
   .about {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 400px;
+    border-radius: 0;
+
     .topic {
       font-size: 2rem;
     }
-    height: 100vh;
-    max-height: 400px;
-    padding: 10%;
     .aboutContent {
       p:nth-child(1) {
         font-size: 1.25rem;
