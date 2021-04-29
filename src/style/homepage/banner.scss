@@ -3,8 +3,7 @@
   background-position: center;
   height: 100vh;
   background-image: url(../../images/nyc.jpg);
-  font-family: "Trebuchet MS", "Noto Sans TC";
-  // background-attachment: fixed;
+  font-family: $fontType1;
 
   .light-cover {
     height: 100vh;

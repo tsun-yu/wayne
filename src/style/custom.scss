@@ -1,1 +1,10 @@
 $primary: #fdc300;
+$fontType1: "Trebuchet MS", "Noto Sans TC", sans-serif, Arial, sans-serif;
+
+.topic {
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  font-family: $fontType1;
+}
