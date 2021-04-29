@@ -25,11 +25,11 @@ function Skills(props) {
         <div className="skills">
           <div className="skill-category">
             <h2>英語技能</h2>
-            <div className="skillsItems d-flex">多益成績:810</div>
+            <div className="skillsItems  ">多益成績:810</div>
           </div>
           <div className="skill-category">
             <h2>HTML & CSS</h2>
-            <div className="d-flex">
+            <div className=" ">
               <div className="skillsItems">
                 <SiHtml5 /> HTML5
               </div>
@@ -48,7 +48,7 @@ function Skills(props) {
           </div>
           <div className="skill-category">
             <h2>JavaScript</h2>
-            <div className="d-flex">
+            <div className=" ">
               <div className="skillsItems">
                 <SiJavascript /> JavaScript
               </div>
@@ -65,7 +65,7 @@ function Skills(props) {
           </div>
           <div className="skill-category">
             <h2>Others</h2>
-            <div className="d-flex">
+            <div className=" ">
               <div className="skillsItems">
                 <SiNpm /> NPM,
                 <SiYarn /> yarn 指令

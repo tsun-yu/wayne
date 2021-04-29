@@ -48,3 +48,18 @@
     }
   }
 }
+
+@media (max-width: 540px) {
+  .skill-section {
+    height: auto;
+
+    .skills {
+      flex-direction: column;
+
+      .skill-category {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
