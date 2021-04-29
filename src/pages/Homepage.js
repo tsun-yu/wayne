@@ -10,8 +10,6 @@ function Homepage(props) {
         <Banner />
         <AboutMe />
         <Skills />
-        <Skills />
-        <Skills />
       </main>
     </>
   );
