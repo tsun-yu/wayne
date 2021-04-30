@@ -1,18 +1,18 @@
-.skill-section {
+.skills {
   height: 50vh;
   min-height: 26rem;
   padding: 5% 10%;
   font-family: $fontType1;
   color: #555;
 
-  .topic {
+  .skills__title {
     color: rgb(17, 17, 17);
   }
 
-  .skills {
+  .skills__cards {
     display: flex;
 
-    .skill-category {
+    .skills__category {
       width: 23.75%;
       text-align: center;
       background-color: #fff;
@@ -33,7 +33,7 @@
         margin-top: 0;
       }
 
-      .skillsItems {
+      .skills__item {
         line-height: 2rem;
         display: flex;
         font-size: 1.25rem;
@@ -50,13 +50,13 @@
 }
 
 @media (max-width: 540px) {
-  .skill-section {
+  .skills {
     height: auto;
 
-    .skills {
+    .skills__cards {
       flex-direction: column;
 
-      .skill-category {
+      .skills__category {
         width: 100%;
         margin-bottom: 1rem;
       }

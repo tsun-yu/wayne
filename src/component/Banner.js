@@ -4,15 +4,11 @@ function Banner(props) {
   return (
     <>
       <div className="banner">
-        <div className="light-cover">
-          <span className="hpTitle animate__animated animate__flipInX">
-            It's all about
-          </span>
-          <span className="hpTitle animate__animated animate__flipInX">
-            WAYNE HUANG
-          </span>
+        <div className="banner__cover">
+          <span className="banner__title ">It's all about</span>
+          <span className="banner__title">WAYNE HUANG</span>
           <hr />
-          <div className="smallword animate__animated animate__flipInY ">
+          <div className="banner__title--sm">
             <span>Welcome To My Website</span>
             <span>Skills | Experience | Works</span>
           </div>
