@@ -1,7 +1,6 @@
 .skills {
-  height: 50vh;
-  min-height: 26rem;
-  padding: 5% 10%;
+  height: auto;
+  padding: 5% 10% 0 10%;
   font-family: $fontType1;
   color: #555;
 
@@ -16,11 +15,15 @@
       width: 23.75%;
       text-align: center;
       background-color: #fff;
-      margin: 0 0.625%;
+      // margin: 0 0.625%;
       padding: 1.5rem 0;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
       border-radius: 0.3125rem;
       transition: 0.5s;
+
+      &:not(:last-child) {
+        margin-right: 1.6667%;
+      }
 
       &:hover {
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);

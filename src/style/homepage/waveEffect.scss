@@ -9,22 +9,22 @@
   animation: animate 4s ease-in-out infinite;
 }
 #wave1 {
-  z-index: 1000;
+  z-index: 10;
   opacity: 1;
   background-position-x: 400px;
 }
 #wave2 {
-  z-index: 999;
+  z-index: 9;
   opacity: 0.5;
   background-position-x: 300px;
 }
 #wave3 {
-  z-index: 998;
+  z-index: 8;
   opacity: 0.2;
   background-position-x: 200px;
 }
 #wave4 {
-  z-index: 999;
+  z-index: 9;
   opacity: 0.7;
   background-position-x: 100px;
 }
