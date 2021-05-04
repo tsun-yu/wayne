@@ -1,9 +1,4 @@
-.waves {
-  position: relative;
-  width: 100%;
-  bottom: -3rem;
-}
-.waves__wave {
+.wave {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -12,7 +7,6 @@
   background: url(../../images/output-onlinepngtools.png);
   background-size: 1000px 100px;
   animation: animate 4s ease-in-out infinite;
-  //   animation-delay: calc(var(--i) * 0.25s);
 }
 #wave1 {
   z-index: 1000;
@@ -41,5 +35,11 @@
   }
   50% {
     transform: translateY(10px);
+  }
+}
+
+@media (max-width: 540px) {
+  .wave {
+    display: none;
   }
 }
