@@ -3,7 +3,6 @@
   background-position: center;
   height: 100vh;
   background-image: url(../../images/nyc.jpg);
-  font-family: $fontType1;
 
   .banner__cover {
     height: 100vh;
@@ -15,12 +14,22 @@
     flex-direction: column;
 
     .banner__title {
+      font: {
+        family: $fontEn3;
+        size: 5rem;
+        weight: 100;
+      }
       color: #ffffff;
-      font-size: 5rem;
-      font-weight: 900;
       text-shadow: 1px 1px 2px #555;
+
+      .banner__title--primary {
+        color: $primary;
+      }
     }
     .banner__title--sm {
+      font-family: $fontEn1;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px #555;
       display: flex;
       flex-direction: column;
 

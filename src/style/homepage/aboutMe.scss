@@ -19,22 +19,31 @@
     box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.089);
 
     .about__topic {
-      font-size: 3rem;
+      font: {
+        size: 3rem;
+        family: $fontEn1;
+      }
+
       color: #333;
       text-align: center;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-      font-family: "Trebuchet MS", "Noto Sans TC";
     }
 
     .about__content {
       text-align: center;
+      font-family: $fontCn;
       h1 {
-        font-size: 1.5rem;
+        font: {
+          size: 1.5rem;
+          weight: 500;
+        }
         color: $primary;
-        font-weight: 500;
       }
       .about__intro {
-        font-size: 1.25rem;
+        font: {
+          weight: 500;
+          size: 1.25rem;
+        }
         padding: 0 6rem;
         color: #333;
         margin: 2rem;

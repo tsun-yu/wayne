@@ -1,8 +1,8 @@
 $primary: #fdc300;
-$fontType1: "Trebuchet MS", "Noto Sans TC", sans-serif, Arial, sans-serif;
-$fontType2: "Poiret One", cursive;
-$fontCN: "Noto Serif TC", serif;
-$fontLogo: "Pacifico", cursive;
+$fontEn1: "Trebuchet MS";
+$fontEn2: "Poiret One", cursive;
+$fontEn3: "Pacifico", cursive;
+$fontCn: "Noto Serif TC", serif;
 
 //Noto Serif TC
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Pacifico&family=Poiret+One&display=swap");
@@ -12,5 +12,5 @@ $fontLogo: "Pacifico", cursive;
   color: #ffffff;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  font-family: $fontType1;
+  font-family: $fontEn1;
 }
