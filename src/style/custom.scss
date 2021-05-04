@@ -1,5 +1,11 @@
 $primary: #fdc300;
 $fontType1: "Trebuchet MS", "Noto Sans TC", sans-serif, Arial, sans-serif;
+$fontType2: "Poiret One", cursive;
+$fontCN: "Noto Serif TC", serif;
+$fontLogo: "Pacifico", cursive;
+
+//Noto Serif TC
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Pacifico&family=Poiret+One&display=swap");
 
 .topic {
   font-size: 3rem;
