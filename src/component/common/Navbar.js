@@ -39,7 +39,7 @@ function Navbar(props) {
     <>
       <header className="navbar">
         <div className="navbar__progress"></div>
-        <span>WAYNE</span>
+        {/* <span>WAYNE</span> */}
         <ul>
           {/* about */}
           <li

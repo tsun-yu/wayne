@@ -1,8 +1,8 @@
 .navbar {
   width: 100vw;
   height: 6.25rem;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  // background-color: rgba(255, 255, 255, 0);
+  // box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,8 +43,11 @@
   height: 3.125rem;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px);
+  transition: 0.5s;
 
-  span {
+  &::before {
+    content: "WAYNE";
+    font-family: $fontEn3;
     font-size: 1.5rem;
   }
 }
@@ -65,6 +68,10 @@
         size: 1.5rem;
       }
       margin-left: 1rem;
+    }
+
+    ul {
+      display: none;
     }
   }
 }
