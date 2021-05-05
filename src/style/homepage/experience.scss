@@ -2,7 +2,7 @@
   width: 80%;
   margin-top: 5%;
   padding: 0 10%;
-  height: 300vh;
+
   .exp__title {
     color: rgb(17, 17, 17);
   }
@@ -31,9 +31,6 @@
         width: 100%;
         margin-bottom: 2.5rem;
 
-        h3 {
-          margin: 0 0 1rem 0;
-        }
         .exp__date {
           width: 24%;
           padding-right: 2%;
@@ -42,21 +39,42 @@
         .exp__description {
           padding-left: 2%;
           width: 72%;
+
+          h3 {
+            margin: 0;
+          }
+          p {
+            margin: 0 0 1rem 0;
+            color: #777;
+          }
         }
       }
     }
   }
 }
 
-//   .grad {
-//     position: absolute;
-//     width: 80%;
-//     height: 90vh;
-//     background: rgb(255, 255, 255);
-//     background: linear-gradient(
-//       0deg,
-//       rgba(255, 255, 255, 1) 0%,
-//       rgba(255, 255, 255, 0) 50%,
-//       rgba(254, 255, 255, 1) 100%
-//     );
-//   }
+@media (max-width: 540px) {
+  .exp__sec {
+    .exp {
+      .exp__content {
+        height: 80vh;
+
+        .exp__item {
+          display: block;
+          width: 100%;
+
+          .exp__date {
+            width: 100%;
+            padding-right: 0;
+            border-bottom: 2px solid #333;
+            border-right: none;
+          }
+          .exp__description {
+            padding-left: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

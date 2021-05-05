@@ -25,7 +25,7 @@ function Experience(props) {
 
               <li className="exp__description">
                 <h3>資策會 前端工程師就業養成班</h3>
-                <span>Institute for Information Industry Taipei, Taiwan</span>
+                <p>Institute for Information Industry Taipei, Taiwan</p>
                 <div>
                   - 前端：HTML5, CSS3, JS ES6, React, Bootstrap, jQuery等
                   <br />- 後端：PHP, node.js (CRUD)
@@ -43,7 +43,7 @@ function Experience(props) {
 
               <li className="exp__description">
                 <h3>海空運業務</h3>
-                <span>八達國際物流 Taipei, Taiwan</span>
+                <p>八達國際物流 Taipei, Taiwan</p>
                 <div>
                   - 海空運報價：年業績創造利潤百萬
                   負責海空運報價、解答運輸上的問題、維護與客戶關係、居中協調客人及船公司，需了解海空運運輸知識、進出口文件、了解進口報關規範
@@ -52,13 +52,13 @@ function Experience(props) {
             </ul>
             <ul className="exp__item">
               <li className="exp__date">
-                2017.9 - 2018.3(7mos) <br />
+                2017/9 - 2018/3(7mos) <br />
                 工作經歷
               </li>
 
               <li className="exp__description">
                 <h3>共同創辦人</h3>
-                <span>Lalalocker, Taipei, Taiwan</span>
+                <p>Lalalocker, Taipei, Taiwan</p>
                 <div>
                   - 利用自己搭建的網路平台媒合店家的彈性空間成為旅客的寄物點
                   <br />
@@ -70,13 +70,13 @@ function Experience(props) {
             </ul>
             <ul className="exp__item">
               <li className="exp__date">
-                2013.9 - 2017.6(3yr 10mos) <br />
+                2013/9 - 2017/6(3yr 10mos) <br />
                 學習經歷
               </li>
 
               <li className="exp__description">
                 <h3>東吳大學 國際貿易學系</h3>
-                <span>Soochow University, Taipei, Taiwan</span>
+                <p>Soochow University, Taipei, Taiwan</p>
                 <div>
                   - 選修個體經濟學、總體經濟學、智慧財產權法、餐旅管理等 <br />
                   - 旁聽國貿研究所電子商務課程 <br />-

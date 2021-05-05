@@ -6,7 +6,7 @@ function AboutMe(props) {
     <>
       <div className="about-seciton">
         <div class="about">
-          <div class="about__topic">ABOUT ME</div>
+          <div class="topic about__title">ABOUT ME</div>
           <hr />
           <div class="about__content">
             <h1>
