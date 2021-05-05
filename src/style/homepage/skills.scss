@@ -1,29 +1,29 @@
-.skill-section {
-  height: 50vh;
-  min-height: 26rem;
-  padding: 5% 10%;
-  font-family: $fontType1;
+.skills {
+  height: auto;
+  padding: 5% 10% 0 10%;
+  font-family: $fontEn1, $fontCn;
   color: #555;
 
-  .topic {
+  .skills__title {
     color: rgb(17, 17, 17);
   }
 
-  .skills {
+  .skills__cards {
     display: flex;
 
-    .skill-category {
+    .skills__category {
+      @extend %card-style;
       width: 23.75%;
       text-align: center;
-      background-color: #fff;
-      margin: 0 0.625%;
       padding: 1.5rem 0;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-      border-radius: 0.3125rem;
-      transition: 0.2s;
+      transition: 0.5s;
+
+      &:not(:last-child) {
+        margin-right: 1.6667%;
+      }
 
       &:hover {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
       }
 
       h2 {
@@ -33,7 +33,7 @@
         margin-top: 0;
       }
 
-      .skillsItems {
+      .skills__item {
         line-height: 2rem;
         display: flex;
         font-size: 1.25rem;
@@ -50,13 +50,13 @@
 }
 
 @media (max-width: 540px) {
-  .skill-section {
+  .skills {
     height: auto;
 
-    .skills {
+    .skills__cards {
       flex-direction: column;
 
-      .skill-category {
+      .skills__category {
         width: 100%;
         margin-bottom: 1rem;
       }

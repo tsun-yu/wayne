@@ -3,9 +3,8 @@
   background-position: center;
   height: 100vh;
   background-image: url(../../images/nyc.jpg);
-  font-family: $fontType1;
 
-  .light-cover {
+  .banner__cover {
     height: 100vh;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.3);
@@ -14,13 +13,23 @@
     justify-content: center;
     flex-direction: column;
 
-    .hpTitle {
+    .banner__title {
+      font: {
+        family: $fontEn3;
+        size: 5rem;
+        weight: 100;
+      }
       color: #ffffff;
-      font-size: 5rem;
-      font-weight: 900;
       text-shadow: 1px 1px 2px #555;
+
+      .banner__title--primary {
+        color: $primary;
+      }
     }
-    .smallword {
+    .banner__title--sm {
+      font-family: $fontEn1;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px #555;
       display: flex;
       flex-direction: column;
 
@@ -38,11 +47,11 @@
 
 @media (max-width: 540px) {
   .banner {
-    .light-cover {
-      .hpTitle {
+    .banner__cover {
+      .banner__title {
         font-size: 2.5rem;
       }
-      .smallword {
+      .banner__title--sm {
         span {
           font-size: 1rem;
         }
