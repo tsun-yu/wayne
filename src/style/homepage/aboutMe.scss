@@ -6,7 +6,12 @@
   height: 30rem;
   display: flex;
   justify-content: center;
-  background-color: #ccc;
+  background: rgb(204, 204, 204);
+  background: linear-gradient(
+    0deg,
+    rgba(204, 204, 204, 1) 0%,
+    rgba(245, 245, 245, 1) 29%
+  );
 
   .about {
     position: absolute;
