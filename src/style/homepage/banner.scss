@@ -3,6 +3,7 @@
   background-position: center;
   height: 100vh;
   background-image: url(../../images/nyc.jpg);
+  background-attachment: fixed;
 
   .banner__cover {
     height: 100vh;
@@ -16,7 +17,7 @@
     .banner__title {
       font: {
         family: $fontEn3;
-        size: 5rem;
+        size: 6rem;
         weight: 100;
       }
       color: #ffffff;
@@ -49,7 +50,10 @@
   .banner {
     .banner__cover {
       .banner__title {
-        font-size: 2.5rem;
+        font-size: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .banner__title--sm {
         span {

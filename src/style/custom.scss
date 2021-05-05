@@ -1,11 +1,11 @@
 $primary: #fdc300;
-$fontEn1: "Trebuchet MS", Pacifico;
+$fontEn1: "Poppins", "Trebuchet MS";
 $fontEn2: "Poiret One", cursive;
 $fontEn3: "Pacifico", cursive;
 $fontCn: "Noto Serif TC", serif;
 
-//Noto Serif TC
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Pacifico&family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
 .topic {
   font-size: 3rem;
@@ -13,4 +13,5 @@ $fontCn: "Noto Serif TC", serif;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   font-family: $fontEn1;
+  font-weight: 400;
 }
