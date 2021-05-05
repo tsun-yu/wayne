@@ -1,0 +1,62 @@
+.exp__sec {
+  width: 80%;
+  margin-top: 5%;
+  padding: 0 10%;
+  height: 300vh;
+  .exp__title {
+    color: rgb(17, 17, 17);
+  }
+
+  .exp {
+    @extend %card-style;
+    padding: 5%;
+    font-family: $fontEn1, $fontCn;
+
+    .exp__content {
+      overflow: auto;
+      height: 70vh;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          list-style: none;
+          padding-left: 0;
+        }
+      }
+
+      .exp__item {
+        display: flex;
+        font-size: 1.25rem;
+        width: 100%;
+        margin-bottom: 2.5rem;
+
+        h3 {
+          margin: 0 0 1rem 0;
+        }
+        .exp__date {
+          width: 24%;
+          padding-right: 2%;
+          border-right: 2px solid #333;
+        }
+        .exp__description {
+          padding-left: 2%;
+          width: 72%;
+        }
+      }
+    }
+  }
+}
+
+//   .grad {
+//     position: absolute;
+//     width: 80%;
+//     height: 90vh;
+//     background: rgb(255, 255, 255);
+//     background: linear-gradient(
+//       0deg,
+//       rgba(255, 255, 255, 1) 0%,
+//       rgba(255, 255, 255, 0) 50%,
+//       rgba(254, 255, 255, 1) 100%
+//     );
+//   }
