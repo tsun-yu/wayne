@@ -1,8 +1,6 @@
 .navbar {
   width: 100vw;
   height: 6.25rem;
-  // background-color: rgba(255, 255, 255, 0);
-  // box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,13 +14,13 @@
     height: 100%;
     z-index: -2;
     left: 0;
+    box-shadow: inset 0px 0px 10px 5px rgba(235, 235, 235, 0.541);
+  }
+  .navbar__ham {
+    display: none;
   }
   span {
-    font: {
-      size: 3rem;
-      family: $fontEn3;
-    }
-    transition: 0.5s;
+    display: none;
   }
   ul {
     position: absolute;
@@ -37,6 +35,9 @@
       list-style: none;
       cursor: pointer;
     }
+    .navbar__selected {
+      color: $primary;
+    }
   }
 }
 .navbarFix {
@@ -45,8 +46,8 @@
   backdrop-filter: blur(2px);
   transition: 0.5s;
 
-  &::before {
-    content: "WAYNE";
+  span {
+    display: inline-block;
     font-family: $fontEn3;
     font-size: 1.5rem;
   }
@@ -56,16 +57,24 @@
   .navbar {
     height: 3.125rem;
     background-color: rgba(255, 255, 255, 1);
-    justify-content: start;
+    justify-content: space-between;
     position: fixed;
 
     .navbar__progress {
-      background-color: rgb(248, 248, 248);
+      background-color: $primary;
+      box-shadow: none;
     }
-
+    .navbar__ham {
+      display: block;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
     span {
+      display: inline-block;
       font: {
         size: 1.5rem;
+        family: $fontEn3;
       }
       margin-left: 1rem;
     }
@@ -73,5 +82,10 @@
     ul {
       display: none;
     }
+  }
+}
+.navbarFix {
+  &::before {
+    content: none;
   }
 }
