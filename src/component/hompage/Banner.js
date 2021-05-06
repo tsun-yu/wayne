@@ -5,7 +5,7 @@ function Banner(props) {
     <>
       <div className="banner">
         <div className="banner__cover">
-          <span className="banner__title ">
+          <span className="banner__title animate__animated animate__flipInX animate__slow">
             I am <span className="banner__title--primary">Wayne</span> Huang
           </span>
 
