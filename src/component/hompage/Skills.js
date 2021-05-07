@@ -20,7 +20,7 @@ function Skills(props) {
   return (
     <>
       <div className="skills">
-        <div className="topic skills__title">SKILLS</div>
+        <div className="topic">SKILLS</div>
         <hr />
         <div className="skills__cards">
           <div className="skills__category">

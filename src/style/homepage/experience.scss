@@ -3,10 +3,6 @@
   margin-top: 5%;
   padding: 0 10%;
 
-  .exp__title {
-    color: rgb(17, 17, 17);
-  }
-
   .exp {
     @extend %card-style;
     padding: 5%;

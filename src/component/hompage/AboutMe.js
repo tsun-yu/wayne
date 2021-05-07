@@ -6,7 +6,7 @@ function AboutMe(props) {
     <>
       <div className="about-section">
         <div className="about" style={{ top: "-4.5rem" }}>
-          <div className="topic about__title">ABOUT ME</div>
+          <div className="topic">ABOUT ME</div>
           <hr />
           <div className="about__content">
             <h1>

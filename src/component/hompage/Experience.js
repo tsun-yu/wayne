@@ -5,7 +5,7 @@ function Experience(props) {
   return (
     <>
       <div className="exp__sec">
-        <div className="topic exp__title">EXPERIENCE</div>
+        <div className="topic">EXPERIENCE</div>
         <hr />
         <div className="exp">
           <h1>Timeline</h1>
