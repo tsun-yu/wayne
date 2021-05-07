@@ -1,19 +1,10 @@
 import React, { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar(props) {
   useEffect(() => {
-    // const document.querySelector = (id) => document.querySelector(id);
-
-    const aboutHeight =
-      document.querySelector(".about-section").offsetTop -
-      document.querySelector(".navbar").offsetHeight;
-    const skillHeight =
-      document.querySelector(".skills").offsetTop -
-      document.querySelector(".navbar").offsetHeight;
-    const expHeight =
-      document.querySelector(".exp__sec").offsetTop -
-      document.querySelector(".navbar").offsetHeight;
+    const slr = (id) => document.querySelector(id);
 
     const resetColor = () => {
       document.querySelectorAll(".navbar>ul>li").forEach((v) => {
@@ -25,8 +16,8 @@ function Navbar(props) {
       //縮小
       document.body.clientWidth >= 540 &&
         (window.scrollY >= 50
-          ? document.querySelector(".navbar").classList.add("navbarFix")
-          : document.querySelector(".navbar").classList.remove("navbarFix"));
+          ? slr(".navbar").classList.add("navbarFix")
+          : slr(".navbar").classList.remove("navbarFix"));
 
       //進度條
       const documentHeight = document.body.offsetHeight;
@@ -35,19 +26,25 @@ function Navbar(props) {
       let progressPercent =
         (100 * scrollHeight) / (documentHeight - windowHeight);
 
-      document.querySelector(".navbar__progress").style.width =
-        progressPercent + "%";
+      slr(".navbar__progress").style.width = progressPercent + "%";
+
+      const aboutHeight =
+        slr(".about-section").offsetTop - slr(".navbar").offsetHeight;
+      const skillHeight =
+        slr(".skills").offsetTop - slr(".navbar").offsetHeight;
+      const expHeight =
+        slr(".exp__sec").offsetTop - slr(".navbar").offsetHeight;
 
       //變色
       if (scrollHeight >= aboutHeight && scrollHeight < skillHeight) {
         resetColor();
-        document.querySelector("#nav-about").classList.add("navbar__selected");
+        slr("#nav-about").classList.add("navbar__selected");
       } else if (scrollHeight >= skillHeight && scrollHeight < expHeight) {
         resetColor();
-        document.querySelector("#nav-skill").classList.add("navbar__selected");
+        slr("#nav-skill").classList.add("navbar__selected");
       } else if (scrollHeight >= expHeight) {
         resetColor();
-        document.querySelector("#nav-exp").classList.add("navbar__selected");
+        slr("#nav-exp").classList.add("navbar__selected");
       } else {
         resetColor();
       }
@@ -113,7 +110,9 @@ function Navbar(props) {
           >
             PORFOLIOS
           </li>
-          <li>CONTACT</li>
+          {/* <li>
+            <Link to="contact">CONTACT</Link>
+          </li> */}
         </ul>
       </header>
     </>

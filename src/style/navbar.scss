@@ -22,6 +22,11 @@
   span {
     display: none;
   }
+  .navbar__logo {
+    display: inline;
+    font-family: $fontEn3;
+    font-size: 1.5rem;
+  }
   ul {
     position: absolute;
     display: flex;
