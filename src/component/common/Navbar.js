@@ -68,7 +68,7 @@ function Navbar(props) {
         slr("#nav-exp").classList.add("navbar__selected");
       } else if (scrollHeight >= homeContents[3]) {
         resetColor();
-        slr("#nav-prots").classList.add("navbar__selected");
+        slr("#nav-ports").classList.add("navbar__selected");
       } else {
         resetColor();
       }
@@ -126,7 +126,7 @@ function Navbar(props) {
           </li>
           {/* portfolios */}
           <li
-            id="nav-prots"
+            id="nav-ports"
             onClick={() => {
               scrollTo(".works");
             }}
