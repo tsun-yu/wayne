@@ -62,7 +62,7 @@ function Navbar(props) {
         slr("#nav-skill").classList.add("navbar__selected");
       } else if (
         scrollHeight >= homeContents[2] &&
-        scrollHeight <= homeContents[3]
+        scrollHeight < homeContents[3]
       ) {
         resetColor();
         slr("#nav-exp").classList.add("navbar__selected");
