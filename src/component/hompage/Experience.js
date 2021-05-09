@@ -4,7 +4,7 @@ import ExperienceItem from "./ExperienceItem";
 function Experience(props) {
   return (
     <>
-      <div className="exp__sec">
+      <div className="exp__sec home-content">
         <div className="topic">EXPERIENCE</div>
         <hr />
         <div className="exp">
