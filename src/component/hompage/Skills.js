@@ -19,8 +19,8 @@ import { IoGitBranch } from "react-icons/io5";
 function Skills(props) {
   return (
     <>
-      <div className="skills">
-        <div className="topic skills__title">SKILLS</div>
+      <div className="skills home-content">
+        <div className="topic">SKILLS</div>
         <hr />
         <div className="skills__cards">
           <div className="skills__category">

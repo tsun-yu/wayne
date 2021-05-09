@@ -4,9 +4,9 @@ import WaveEffect from "./WaveEffect";
 function AboutMe(props) {
   return (
     <>
-      <div className="about-section">
+      <div className="about-section home-content">
         <div className="about" style={{ top: "-4.5rem" }}>
-          <div className="topic about__title">ABOUT ME</div>
+          <div className="topic">ABOUT ME</div>
           <hr />
           <div className="about__content">
             <h1>
