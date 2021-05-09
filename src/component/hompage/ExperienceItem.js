@@ -2,6 +2,12 @@ import React from "react";
 
 function ExperienceItem(props) {
   const { date, category, title, des, content } = props;
+
+  let contentBr = [];
+  for (let i = 0; i < content.length; i++) {
+    contentBr.push(content[i]);
+    contentBr.push(<br />);
+  }
   return (
     <>
       <ul className="exp__item">
@@ -13,8 +19,8 @@ function ExperienceItem(props) {
 
         <li className="exp__description">
           <h3>{title}</h3>
-          <span>{des}</span>
-          <div>{content}</div>
+          <p>{des}</p>
+          <div>{contentBr}</div>
         </li>
       </ul>
     </>
