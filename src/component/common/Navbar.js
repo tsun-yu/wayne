@@ -88,13 +88,23 @@ function Navbar(props) {
       behavior: "smooth",
     });
   };
+  const menuToggle = (action) => {
+    action === "in"
+      ? slr(".menu").classList.add("menu__appear")
+      : slr(".menu").classList.remove("menu__appear");
+    // document.querySelector(".menu").classList.remove("menu__appear");
+  };
   const homeNav = (
     <>
       <header className="navbar">
         <div className="navbar__progress"></div>
         <span>WAYNE</span>
         <div className="navbar__ham" onClick={() => {}}>
-          <GiHamburgerMenu size={35} color={"#333"} />
+          <GiHamburgerMenu
+            size={35}
+            color={"#333"}
+            onClick={() => menuToggle("in")}
+          />
         </div>
         <ul>
           {/* about */}
@@ -139,6 +149,54 @@ function Navbar(props) {
           </li> */}
         </ul>
       </header>
+      <div className="menu">
+        <ul>
+          {/* about */}
+          <li
+            id="nav-about"
+            onClick={() => {
+              scrollTo(".about-section");
+              menuToggle("out");
+            }}
+          >
+            ABOUT
+          </li>
+          {/* skills */}
+          <li
+            id="nav-skill"
+            onClick={() => {
+              scrollTo(".skills");
+              menuToggle("out");
+            }}
+          >
+            SKILLS
+          </li>
+          {/* experience */}
+          <li
+            id="nav-exp"
+            onClick={() => {
+              scrollTo(".exp__sec");
+              menuToggle("out");
+            }}
+          >
+            EXPERIENCE
+          </li>
+          {/* portfolios */}
+          <li
+            id="nav-ports"
+            onClick={() => {
+              scrollTo(".works");
+              menuToggle("out");
+            }}
+          >
+            PORFOLIOS
+          </li>
+
+          {/* <li>
+            <Link to="contact">CONTACT</Link>
+          </li> */}
+        </ul>
+      </div>
     </>
   );
   const commonNav = (

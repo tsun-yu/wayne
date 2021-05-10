@@ -1,3 +1,5 @@
+@import "./menu";
+
 .navbar {
   width: 100vw;
   height: 6.25rem;
@@ -87,10 +89,5 @@
     ul {
       display: none;
     }
-  }
-}
-.navbarFix {
-  &::before {
-    content: none;
   }
 }
