@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdClose } from "react-icons/md";
 import { Link, useLocation, useHistory } from "react-router-dom";
 
 function Navbar(props) {
@@ -9,6 +10,9 @@ function Navbar(props) {
   const resetColor = () => {
     document.querySelectorAll(".navbar>ul>li").forEach((v) => {
       v.classList.remove("navbar__selected");
+    });
+    document.querySelectorAll(".menu>ul>li").forEach((v) => {
+      v.classList.remove("menu__selected");
     });
   };
   const slr = (id) => document.querySelector(id);
@@ -54,21 +58,25 @@ function Navbar(props) {
       if (scrollHeight >= homeContents[0] && scrollHeight < homeContents[1]) {
         resetColor();
         slr("#nav-about").classList.add("navbar__selected");
+        slr("#menu-about").classList.add("menu__selected");
       } else if (
         scrollHeight >= homeContents[1] &&
         scrollHeight < homeContents[2]
       ) {
         resetColor();
         slr("#nav-skill").classList.add("navbar__selected");
+        slr("#menu-skill").classList.add("menu__selected");
       } else if (
         scrollHeight >= homeContents[2] &&
         scrollHeight < homeContents[3]
       ) {
         resetColor();
         slr("#nav-exp").classList.add("navbar__selected");
+        slr("#menu-exp").classList.add("menu__selected");
       } else if (scrollHeight >= homeContents[3]) {
         resetColor();
         slr("#nav-ports").classList.add("navbar__selected");
+        slr("#menu-ports").classList.add("menu__selected");
       } else {
         resetColor();
       }
@@ -89,9 +97,16 @@ function Navbar(props) {
     });
   };
   const menuToggle = (action) => {
-    action === "in"
-      ? slr(".menu").classList.add("menu__appear")
-      : slr(".menu").classList.remove("menu__appear");
+    if (action === "in") {
+      slr(".menu").classList.add("menu__appear");
+      slr("#menu-ham").style.display = "none";
+      slr("#menu-close").style.display = "block";
+    } else {
+      slr(".menu").classList.remove("menu__appear");
+      slr("#menu-ham").style.display = "block";
+      slr("#menu-close").style.display = "none";
+    }
+
     // document.querySelector(".menu").classList.remove("menu__appear");
   };
   const homeNav = (
@@ -99,11 +114,19 @@ function Navbar(props) {
       <header className="navbar">
         <div className="navbar__progress"></div>
         <span>WAYNE</span>
-        <div className="navbar__ham" onClick={() => {}}>
+        <div className="navbar__ham">
           <GiHamburgerMenu
+            id="menu-ham"
             size={35}
             color={"#333"}
             onClick={() => menuToggle("in")}
+          />
+          <MdClose
+            id="menu-close"
+            size={35}
+            color={"#333"}
+            style={{ display: "none" }}
+            onClick={() => menuToggle("out")}
           />
         </div>
         <ul>
@@ -153,7 +176,7 @@ function Navbar(props) {
         <ul>
           {/* about */}
           <li
-            id="nav-about"
+            id="menu-about"
             onClick={() => {
               scrollTo(".about-section");
               menuToggle("out");
@@ -163,7 +186,7 @@ function Navbar(props) {
           </li>
           {/* skills */}
           <li
-            id="nav-skill"
+            id="menu-skill"
             onClick={() => {
               scrollTo(".skills");
               menuToggle("out");
@@ -173,7 +196,7 @@ function Navbar(props) {
           </li>
           {/* experience */}
           <li
-            id="nav-exp"
+            id="menu-exp"
             onClick={() => {
               scrollTo(".exp__sec");
               menuToggle("out");
@@ -183,7 +206,7 @@ function Navbar(props) {
           </li>
           {/* portfolios */}
           <li
-            id="nav-ports"
+            id="menu-ports"
             onClick={() => {
               scrollTo(".works");
               menuToggle("out");
