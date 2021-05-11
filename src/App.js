@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import NotFoundPage from "./pages/NotFounPage";
 import MainContent from "./component/common/MainContent";
 import ScrollToTop from "./component/common/ScrollToTop";
+import Footer from "./component/common/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             </Switch>
           </MainContent>
         </ScrollToTop>
+        <Footer />
       </>
     </HashRouter>
   );

@@ -1,7 +1,7 @@
 .works {
   width: 80%;
   margin-top: 5%;
-  padding: 0 10%;
+  padding: 0 10% 1rem;
 
   .works__card {
     @extend %card-style;

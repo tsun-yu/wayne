@@ -1,5 +1,7 @@
 @import "./style/custom.scss";
 @import "./style/common/navbar";
+@import "./style/common/notFoundPage";
+@import "./style/common/footer";
 @import "./style/homepage";
 
 body {
@@ -15,4 +17,9 @@ hr {
   background-color: $primary;
   width: 50px;
   margin: 30px auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
