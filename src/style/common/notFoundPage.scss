@@ -1,0 +1,15 @@
+.notfound {
+  height: 400vh;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  h1 {
+    font: {
+      family: $fontCn;
+      weight: 400;
+      size: 3rem;
+    }
+  }
+}
