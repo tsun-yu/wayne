@@ -3,6 +3,7 @@
 @import "./style/common/notFoundPage";
 @import "./style/common/footer";
 @import "./style/homepage";
+@import "./style/works";
 
 body {
   margin: 0;
@@ -17,9 +18,4 @@ hr {
   background-color: $primary;
   width: 50px;
   margin: 30px auto;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
 }

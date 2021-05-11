@@ -14,7 +14,6 @@ function Homepage(props) {
           <AboutMe />
           <Skills />
           <Experience />
-          <Works />
         </div>
       </main>
     </>
