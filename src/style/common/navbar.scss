@@ -60,6 +60,44 @@
   }
 }
 
+.navbar2 {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 20;
+  height: 3.125rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+
+  span {
+    display: inline-block;
+    font-family: $fontEn3;
+    font-size: 1.5rem;
+  }
+  .navbar__ham {
+    display: none;
+  }
+  ul {
+    position: absolute;
+    display: flex;
+    padding: 0;
+    margin: 0 2rem;
+    right: 0;
+    font-family: $fontEn2;
+
+    li {
+      margin: 0 1rem;
+      list-style: none;
+      cursor: pointer;
+    }
+    .navbar__selected {
+      color: $primary;
+    }
+  }
+}
+
 @media (max-width: 540px) {
   .navbar {
     height: 3.125rem;

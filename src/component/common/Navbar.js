@@ -20,10 +20,15 @@ function Navbar(props) {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       //縮小
-      document.body.clientWidth >= 540 &&
-        (window.scrollY >= 50
-          ? slr(".navbar").classList.add("navbarFix")
-          : slr(".navbar").classList.remove("navbarFix"));
+
+      if (slr(".navbar") === null) {
+        return 0;
+      } else {
+        document.body.clientWidth >= 540 &&
+          (window.scrollY >= 50
+            ? slr(".navbar").classList.add("navbarFix")
+            : slr(".navbar").classList.remove("navbarFix"));
+      }
 
       //進度條
       const documentHeight = document.body.offsetHeight;
@@ -130,7 +135,6 @@ function Navbar(props) {
           />
         </div>
         <ul>
-          {/* about */}
           <li
             id="nav-about"
             onClick={() => {
@@ -139,7 +143,7 @@ function Navbar(props) {
           >
             ABOUT
           </li>
-          {/* skills */}
+
           <li
             id="nav-skill"
             onClick={() => {
@@ -148,7 +152,7 @@ function Navbar(props) {
           >
             SKILLS
           </li>
-          {/* experience */}
+
           <li
             id="nav-exp"
             onClick={() => {
@@ -157,7 +161,7 @@ function Navbar(props) {
           >
             EXPERIENCE
           </li>
-          {/* portfolios */}
+
           <li
             id="nav-ports"
             onClick={() => {
@@ -167,9 +171,9 @@ function Navbar(props) {
             PORFOLIOS
           </li>
 
-          {/* <li>
+          <li>
             <Link to="contact">CONTACT</Link>
-          </li> */}
+          </li>
         </ul>
       </header>
       <div className="menu">
@@ -224,18 +228,20 @@ function Navbar(props) {
   );
   const commonNav = (
     <>
-      <header className="navbar">
-        <div className="navbar__progress"></div>
-        <span>WAYNE</span>
+      <header className="navbar2">
+        {/* <div className="navbar__progress"></div> */}
+        <span>
+          <Link to="/">WAYNE</Link>
+        </span>
         <div className="navbar__ham" onClick={() => {}}>
           <GiHamburgerMenu size={35} color={"#333"} />
         </div>
         <ul>
           <li>
-            <Link to="test">test</Link>
+            <Link to="/portfolios">PORTFOLIOS</Link>
           </li>
           <li>
-            <Link to="/">home</Link>
+            <Link to="/contact">CONTACT</Link>
           </li>
         </ul>
       </header>
