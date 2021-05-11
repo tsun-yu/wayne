@@ -1,13 +1,13 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: calc(100vh + 4.5rem);
   background-image: url(../../images/nyc.jpg);
   background-attachment: fixed;
 
   .banner__cover {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
@@ -48,6 +48,7 @@
 
 @media (max-width: 540px) {
   .banner {
+    height: 100vh;
     .banner__cover {
       .banner__title {
         font-size: 4rem;

@@ -5,7 +5,7 @@ function AboutMe(props) {
   return (
     <>
       <div className="about-section home-content">
-        <div className="about" style={{ top: "-4.5rem" }}>
+        <div className="about">
           <div className="topic">ABOUT ME</div>
           <hr />
           <div className="about__content">

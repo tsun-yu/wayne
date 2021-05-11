@@ -1,0 +1,30 @@
+footer {
+  width: 100%;
+  height: 6.25rem;
+  font-size: 1rem;
+  font-family: $fontEn2;
+}
+.home__footer {
+  background-image: url(../../images/nyc.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #eaeaea;
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.common__footer {
+  background-color: #fff;
+  color: #333;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

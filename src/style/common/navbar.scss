@@ -1,8 +1,14 @@
 @import "./menu";
 
+.navbar__home {
+  height: 6.25rem;
+
+  span {
+    display: none;
+  }
+}
 .navbar {
   width: 100vw;
-  height: 6.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,23 +17,20 @@
 
   .navbar__progress {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     height: 100%;
     z-index: -2;
     left: 0;
+  }
+  .navbar__progress--home {
     box-shadow: inset 0px 0px 10px 5px rgba(235, 235, 235, 0.541);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .navbar__progress--common {
+    background-color: rgba(253, 195, 0, 0.5);
   }
   .navbar__ham {
     display: none;
-  }
-  span {
-    display: none;
-  }
-  .navbar__logo {
-    display: inline;
-    font-family: $fontEn3;
-    font-size: 1.5rem;
   }
   ul {
     position: absolute;
@@ -47,25 +50,30 @@
     }
   }
 }
-.navbarFix {
+.navbar__sm {
   height: 3.125rem;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px);
   transition: 0.5s;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 
   span {
     display: inline-block;
     font-family: $fontEn3;
     font-size: 1.5rem;
   }
+  #logo {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 540px) {
   .navbar {
-    height: 3.125rem;
-    background-color: rgba(255, 255, 255, 1);
     justify-content: space-between;
-    position: fixed;
+    background-color: rgba(255, 255, 255, 1);
+    height: 3.125rem;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 
     .navbar__progress {
       background-color: $primary;
@@ -77,6 +85,9 @@
       display: flex;
       align-items: center;
     }
+    ul {
+      display: none;
+    }
     span {
       display: inline-block;
       font: {
@@ -84,10 +95,6 @@
         family: $fontEn3;
       }
       margin-left: 1rem;
-    }
-
-    ul {
-      display: none;
     }
   }
 }

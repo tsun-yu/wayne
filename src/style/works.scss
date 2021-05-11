@@ -1,7 +1,6 @@
 .works {
   width: 80%;
-  margin-top: 5%;
-  padding: 0 10%;
+  padding: 5% 10% 1rem;
 
   .works__card {
     @extend %card-style;
@@ -43,6 +42,7 @@
 
 @media (max-width: 540px) {
   .works {
+    padding-top: 3.125rem;
     .works__card {
       flex-direction: column;
       padding: 0;
