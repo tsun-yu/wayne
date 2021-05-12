@@ -6,6 +6,7 @@ import MainContent from "./component/common/MainContent";
 import ScrollToTop from "./component/common/ScrollToTop";
 import Footer from "./component/common/Footer";
 import Portfolios from "./pages/Portfolios";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
               </Route>
               <Route path="/portfolios">
                 <Portfolios />
+              </Route>
+              <Route path="/resume">
+                <Resume />
               </Route>
               <Route path="*">
                 <NotFoundPage />
