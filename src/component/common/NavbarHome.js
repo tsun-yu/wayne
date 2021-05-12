@@ -5,16 +5,8 @@ import { useLocation, useHistory } from "react-router-dom";
 import Menu from "../common/Menu";
 
 function NavabarHome(props) {
+  const { resetColor, menuToggle } = props;
   let history = useHistory();
-
-  const resetColor = () => {
-    document.querySelectorAll(".navbar__home>ul>li").forEach((v) => {
-      v.classList.remove("navbar__selected");
-    });
-    document.querySelectorAll(".menu>ul>li").forEach((v) => {
-      v.classList.remove("menu__selected");
-    });
-  };
   const slr = (id) => document.querySelector(id);
 
   useEffect(() => {
@@ -86,17 +78,6 @@ function NavabarHome(props) {
       top: distance,
       behavior: "smooth",
     });
-  };
-  const menuToggle = (action) => {
-    if (action === "in") {
-      slr(".menu").classList.add("menu__appear");
-      slr("#menu-ham").style.display = "none";
-      slr("#menu-close").style.display = "block";
-    } else {
-      slr(".menu").classList.remove("menu__appear");
-      slr("#menu-ham").style.display = "block";
-      slr("#menu-close").style.display = "none";
-    }
   };
 
   return (
