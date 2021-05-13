@@ -25,7 +25,12 @@
     height: 100vh;
     margin-bottom: 2rem;
   }
-  .resume__hide {
-    display: none;
+}
+
+@media (max-width: 540px) {
+  .resume__sec {
+    iframe {
+      width: 90%;
+    }
   }
 }
