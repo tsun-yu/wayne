@@ -1,0 +1,31 @@
+.resume__sec {
+  padding-top: 3.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .resume__opt {
+    display: flex;
+    justify-content: center;
+    h1 {
+      font-family: $fontCn;
+      font-weight: 400;
+      display: inline-block;
+      margin: 2rem;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  iframe {
+    width: 80%;
+    height: 100vh;
+    margin-bottom: 2rem;
+  }
+  .resume__hide {
+    display: none;
+  }
+}

@@ -5,41 +5,43 @@ import { useHistory, useLocation } from "react-router-dom";
 import Menu from "../common/Menu";
 
 function NavabarCommon(props) {
+  const { resetColor, menuToggle } = props;
+
   let history = useHistory();
   let location = useLocation();
   const slr = (id) => document.querySelector(id);
 
   useEffect(() => {
-    if (location.pathname != "/") {
-      window.addEventListener("scroll", () => {
-        const documentHeight = document.body.offsetHeight;
-        const windowHeight = window.innerHeight;
-        let scrollHeight = window.scrollY;
-        let progressPercent =
-          (100 * scrollHeight) / (documentHeight - windowHeight);
+    window.addEventListener("scroll", () => {
+      const documentHeight = document.body.offsetHeight;
+      const windowHeight = window.innerHeight;
+      let scrollHeight = window.scrollY;
+      let progressPercent =
+        (100 * scrollHeight) / (documentHeight - windowHeight);
 
-        if (slr(".navbar__progress--common") === null) {
-          return 0;
-        } else {
-          slr(".navbar__progress--common").style.width = progressPercent + "%";
-        }
-      });
-    }
+      if (slr(".navbar__progress--common") === null) {
+        return 0;
+      } else {
+        slr(".navbar__progress--common").style.width = progressPercent + "%";
+      }
+      switch (location.pathname) {
+        case "/portfolios":
+          resetColor();
+          slr("#nav-ports").classList.add(".navbar__selected");
+          break;
+        case "/contact":
+          resetColor();
+          slr("#nav-ports").classList.add(".navbar__selected");
+          break;
+        case "/resume":
+          resetColor();
+          slr("#nav-ports").classList.add(".navbar__selected");
+          break;
+      }
+    });
 
     return () => {};
   }, []);
-
-  const menuToggle = (action) => {
-    if (action === "in") {
-      slr(".menu").classList.add("menu__appear");
-      slr("#menu-ham").style.display = "none";
-      slr("#menu-close").style.display = "block";
-    } else {
-      slr(".menu").classList.remove("menu__appear");
-      slr("#menu-ham").style.display = "block";
-      slr("#menu-close").style.display = "none";
-    }
-  };
 
   return (
     <>
@@ -64,9 +66,15 @@ function NavabarCommon(props) {
           />
         </div>
         <ul>
-          <li onClick={() => history.push("/portfolios")}>PORTFOLIOS</li>
-          <li onClick={() => history.push("/resume")}>RESUME</li>
-          <li onClick={() => history.push("/contact")}>CONTACT</li>
+          <li id="nav-ports" onClick={() => history.push("/portfolios")}>
+            PORTFOLIOS
+          </li>
+          <li id="nav-resume" onClick={() => history.push("/resume")}>
+            RESUME
+          </li>
+          <li id="nav-contact" onClick={() => history.push("/contact")}>
+            CONTACT
+          </li>
         </ul>
       </header>
       <Menu />
