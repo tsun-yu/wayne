@@ -1,8 +1,9 @@
-import React from "react";
-import { useHistory } from "react-router";
+import React, { useState } from "react";
+import { useHistory, useLocation } from "react-router";
 
 function Menu(props) {
   const history = useHistory();
+  const location = useLocation();
   const slr = (id) => document.querySelector(id);
   const menuToggle = (action) => {
     if (action === "in") {
@@ -15,10 +16,23 @@ function Menu(props) {
       slr("#menu-close").style.display = "none";
     }
   };
+  const home = (
+    <>
+      <li
+        onClick={() => {
+          menuToggle("out");
+          history.push("/");
+        }}
+      >
+        HOME
+      </li>
+    </>
+  );
   return (
     <>
       <div className="menu">
         <ul>
+          {location.pathname != "/" && home}
           <li
             onClick={() => {
               menuToggle("out");
@@ -27,15 +41,6 @@ function Menu(props) {
           >
             PORTFOLIOS
           </li>
-
-          <li
-            onClick={() => {
-              menuToggle("out");
-              history.push("/contact");
-            }}
-          >
-            CONTACT
-          </li>
           <li
             onClick={() => {
               menuToggle("out");
@@ -43,6 +48,14 @@ function Menu(props) {
             }}
           >
             RESUME
+          </li>
+          <li
+            onClick={() => {
+              menuToggle("out");
+              history.push("/contact");
+            }}
+          >
+            CONTACT
           </li>
         </ul>
       </div>
