@@ -1,20 +1,52 @@
+//react-router
 import { BrowserRouter as Route, HashRouter, Switch } from "react-router-dom";
+
+//components
 import Navbar from "./pages/Navbar";
-import Homepage from "./pages/Homepage";
-import NotFoundPage from "./pages/NotFounPage";
+import Footer from "./component/common/Footer";
 import MainContent from "./component/common/MainContent";
 import ScrollToTop from "./component/common/ScrollToTop";
-import Footer from "./component/common/Footer";
+//pages
+import Homepage from "./pages/Homepage";
+import NotFoundPage from "./pages/NotFounPage";
 import Portfolios from "./pages/Portfolios";
 import Resume from "./pages/Resume";
 
+//icon
+import { BiArrowToTop } from "react-icons/bi";
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const documentHeight = document.body.offsetHeight;
+      const windowHeight = window.innerHeight;
+      let scrollHeight = window.scrollY;
+      let progressPercent =
+        (100 * scrollHeight) / (documentHeight - windowHeight);
+
+      progressPercent >= 10
+        ? (document.querySelector(".toTop").style.display = "block")
+        : (document.querySelector(".toTop").style.display = "none");
+    });
+  }, []);
   return (
     <HashRouter>
       <>
         <Navbar />
         <ScrollToTop>
           <MainContent>
+            <BiArrowToTop
+              size={50}
+              className="toTop"
+              style={{ display: "none" }}
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+            />
             <Switch>
               <Route path="/" exact>
                 <Homepage />
