@@ -25,6 +25,7 @@ function Navbar(props) {
       slr("#menu-close").style.display = "none";
     }
   };
+
   return location.pathname === "/" ? (
     <NavabarHome resetColor={resetColor} menuToggle={menuToggle} />
   ) : (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory, useLocation } from "react-router";
 
 function Menu(props) {
@@ -28,12 +28,14 @@ function Menu(props) {
       </li>
     </>
   );
+
   return (
     <>
       <div className="menu">
         <ul>
           {location.pathname != "/" && home}
           <li
+            id="menu-ports"
             onClick={() => {
               menuToggle("out");
               history.push("/portfolios");
@@ -42,6 +44,7 @@ function Menu(props) {
             PORTFOLIOS
           </li>
           <li
+            id="menu-resume"
             onClick={() => {
               menuToggle("out");
               history.push("/resume");
@@ -50,6 +53,7 @@ function Menu(props) {
             RESUME
           </li>
           <li
+            id="menu-contact"
             onClick={() => {
               menuToggle("out");
               history.push("/contact");
