@@ -6,6 +6,15 @@
   span {
     display: none;
   }
+  ul {
+    li {
+      transition: 0.5s;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
 }
 .navbar {
   width: 100vw;
