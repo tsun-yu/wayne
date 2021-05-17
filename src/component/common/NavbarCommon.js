@@ -83,7 +83,7 @@ function NavabarCommon(props) {
           </li>
         </ul>
       </header>
-      <Menu resetColor={resetColor} />
+      <Menu resetColor={resetColor} menuToggle={menuToggle} />
     </>
   );
 }
