@@ -5,6 +5,7 @@
 @import "./style/homepage";
 @import "./style/works";
 @import "./style/resume";
+@import "./style/contact";
 
 body {
   margin: 0;
@@ -24,7 +25,7 @@ hr {
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  z-index: 19;
+  z-index: 18;
   color: #333;
   border-radius: 5px;
   transition: 0.5s;
