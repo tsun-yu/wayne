@@ -21,7 +21,7 @@ function WorkItem(props) {
           <p>{workDesBr}</p>
           <p>
             連結：
-            <a href={workLink} target="blank">
+            <a href={workLink} target="_blank">
               {workName}
             </a>
           </p>

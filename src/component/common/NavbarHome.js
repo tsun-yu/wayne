@@ -133,7 +133,7 @@ function NavabarHome(props) {
           <li onClick={() => history.push("/contact")}>CONTACT</li>
         </ul>
       </header>
-      <Menu />
+      <Menu menuToggle={menuToggle} />
     </>
   );
 }

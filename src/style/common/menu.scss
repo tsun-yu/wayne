@@ -1,7 +1,9 @@
 .menu {
   display: none;
 }
-
+.noscroll {
+  overflow-y: hidden;
+}
 @media (max-width: 540px) {
   .menu {
     display: block;

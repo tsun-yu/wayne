@@ -16,10 +16,12 @@ function Navbar(props) {
   };
   const menuToggle = (action) => {
     if (action === "in") {
+      slr("body").classList.add("noscroll");
       slr(".menu").classList.add("menu__appear");
       slr("#menu-ham").style.display = "none";
       slr("#menu-close").style.display = "block";
     } else {
+      slr("body").classList.remove("noscroll");
       slr(".menu").classList.remove("menu__appear");
       slr("#menu-ham").style.display = "block";
       slr("#menu-close").style.display = "none";

@@ -1,5 +1,6 @@
-//react-router
+//react
 import { BrowserRouter as Route, HashRouter, Switch } from "react-router-dom";
+import { useEffect } from "react";
 
 //components
 import Navbar from "./pages/Navbar";
@@ -11,10 +12,10 @@ import Homepage from "./pages/Homepage";
 import NotFoundPage from "./pages/NotFounPage";
 import Portfolios from "./pages/Portfolios";
 import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
 
 //icon
 import { BiArrowToTop } from "react-icons/bi";
-import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,9 @@ function App() {
               </Route>
               <Route path="/resume">
                 <Resume />
+              </Route>
+              <Route path="/contact">
+                <Contact />
               </Route>
               <Route path="*">
                 <NotFoundPage />
