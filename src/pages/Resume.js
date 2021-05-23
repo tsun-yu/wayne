@@ -44,7 +44,13 @@ function Resume(props) {
             英文履歷
           </h1>
         </div>
-        <iframe id="cv" frameBorder="0" scrolling="no" src={cvLink}></iframe>
+        <iframe
+          id="cv"
+          frameBorder="0"
+          scrolling="no"
+          src={cvLink}
+          title="My Resume"
+        ></iframe>
       </div>
     </>
   );

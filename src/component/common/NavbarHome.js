@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Menu from "../common/Menu";
 
 function NavabarHome(props) {

@@ -3,11 +3,12 @@ import React from "react";
 function ExperienceItem(props) {
   const { date, category, title, des, content } = props;
 
-  let contentBr = [];
-  for (let i = 0; i < content.length; i++) {
-    contentBr.push(content[i]);
-    contentBr.push(<br />);
-  }
+  let contentBr = content.map((v) => (
+    <>
+      {v}
+      <br />
+    </>
+  ));
   return (
     <>
       <ul className="exp__item">

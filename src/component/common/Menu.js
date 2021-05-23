@@ -5,7 +5,7 @@ function Menu(props) {
   const { menuToggle } = props;
   const history = useHistory();
   const location = useLocation();
-  const slr = (id) => document.querySelector(id);
+
   const home = (
     <>
       <li
@@ -23,7 +23,7 @@ function Menu(props) {
     <>
       <div className="menu">
         <ul>
-          {location.pathname != "/" && home}
+          {location.pathname !== "/" && home}
           <li
             id="menu-ports"
             onClick={() => {
