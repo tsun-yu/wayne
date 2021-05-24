@@ -3,7 +3,7 @@ import { BrowserRouter as Route, HashRouter, Switch } from "react-router-dom";
 import { useEffect } from "react";
 
 //components
-import Navbar from "./pages/Navbar";
+import Navbar from "./component/common/Navbar";
 import Footer from "./component/common/Footer";
 import MainContent from "./component/common/MainContent";
 import ScrollToTop from "./component/common/ScrollToTop";

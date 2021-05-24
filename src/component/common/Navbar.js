@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router";
-import NavabarHome from "../component/common/NavbarHome";
-import NavbarCommon from "../component/common/NavbarCommon";
+import NavabarHome from "./navbar/NavbarHome";
+import NavbarCommon from "./navbar/NavbarCommon";
 
 function Navbar(props) {
   const location = useLocation();
