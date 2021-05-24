@@ -8,7 +8,7 @@ function Contact(props) {
       <div className="contact">
         <div className="contact__profile--bg">
           <div className="contact__profile">
-            <img src="./images/portrait.JPG"></img>
+            <img alt="portrait" src="./images/portrait.JPG"></img>
             <div className="contact__content">
               <div className="contact__des">
                 <h3>
@@ -26,11 +26,16 @@ function Contact(props) {
                 </p>
               </div>
               <div className="contact__icons">
-                <a href="mailto:tsun988487@gmail.com" className="contact__link">
+                <a
+                  href="mailto:tsun988487@gmail.com"
+                  rel="noreferrer"
+                  className="contact__link"
+                >
                   <FiMail size={35} color={"#333"} />
                 </a>
                 <a
                   href="https://www.instagram.com/tsun_yu/"
+                  rel="noreferrer"
                   className="contact__link"
                   target="_blank"
                 >
@@ -38,6 +43,7 @@ function Contact(props) {
                 </a>
                 <a
                   href="https://github.com/tsun-yu"
+                  rel="noreferrer"
                   className="contact__link"
                   target="_blank"
                 >
@@ -47,6 +53,7 @@ function Contact(props) {
                   href="https://www.linkedin.com/in/tsun-yu-wayne-huang-020268163/"
                   className="contact__link"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <SiLinkedin size={35} color={"#333"} />
                 </a>

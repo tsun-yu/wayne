@@ -1,15 +1,25 @@
 import React, { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-import { useLocation, useHistory } from "react-router-dom";
-import Menu from "../common/Menu";
+import { useHistory } from "react-router-dom";
+import Menu from "../Menu";
 
 function NavabarHome(props) {
   const { resetColor, menuToggle } = props;
   let history = useHistory();
+
   const slr = (id) => document.querySelector(id);
 
+  //需滾動的距離公式
+  const scrollDistance = (e) => e.offsetTop - slr(".navbar__home").offsetHeight;
+
   useEffect(() => {
+    //每個區塊需滾動的距離
+    const homeContents = Array.from(
+      document.querySelectorAll(".home-content"),
+      (v) => scrollDistance(v)
+    );
+
     window.addEventListener("scroll", () => {
       //縮小
       if (slr(".navbar__home") === null) {
@@ -19,63 +29,38 @@ function NavabarHome(props) {
           ? slr(".navbar__home").classList.add("navbar__sm")
           : slr(".navbar__home").classList.remove("navbar__sm");
       }
-
-      //進度條
+      //網頁高度
       const documentHeight = document.body.offsetHeight;
+      //視窗高度
       const windowHeight = window.innerHeight;
+      //捲動高度
       let scrollHeight = window.scrollY;
+      //進度條
       let progressPercent =
         (100 * scrollHeight) / (documentHeight - windowHeight);
       slr(".navbar__progress").style.width = progressPercent + "%";
 
-      //需滾動的距離
-      const scrollDistance = (ele) =>
-        slr(ele) === null
-          ? 0
-          : slr(ele).offsetTop - slr(".navbar__home").offsetHeight;
-
-      //每項元素需滾動的距離
-      const homeContents = [];
-      document.querySelectorAll(".home-content").forEach((v, i) => {
-        homeContents.push(scrollDistance(`.home-content:nth-child(${i + 1})`));
-      });
-
-      // for (let i = 0; i > homeContents.length - 1; i++) {
-      //   if (scrollHeight < homeContents[i + 1]) {
-      //     resetColor();
-      //     slr("#nav-prots").classList.add("navbar__selected");
-      //     break;
-      //   }
-      // }
       //變色
-      if (scrollHeight >= homeContents[0] && scrollHeight < homeContents[1]) {
-        resetColor();
-        slr("#nav-about").classList.add("navbar__selected");
-      } else if (
-        scrollHeight >= homeContents[1] &&
-        scrollHeight < homeContents[2]
-      ) {
-        resetColor();
-        slr("#nav-skill").classList.add("navbar__selected");
-      } else if (scrollHeight >= homeContents[2]) {
-        resetColor();
-        slr("#nav-exp").classList.add("navbar__selected");
-      } else {
-        resetColor();
+      for (let i = homeContents.length - 1; i >= 0; i--) {
+        if (scrollHeight > homeContents[i]) {
+          resetColor();
+          document
+            .querySelectorAll(`.navbar__home > ul > li`)
+            [i].classList.add("navbar__selected");
+          break;
+        } else {
+          resetColor();
+        }
       }
     });
 
     return () => {};
   }, []);
 
-  //scroll to the element
-  const scrollTo = (ele) => {
-    const distance =
-      document.querySelector(ele).offsetTop -
-      document.querySelector(".navbar__home").offsetHeight;
-
+  //scroll to the section
+  const scrollTo = (e) => {
     window.scrollTo({
-      top: distance,
+      top: scrollDistance(slr(e)),
       behavior: "smooth",
     });
   };

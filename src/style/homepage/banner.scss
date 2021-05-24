@@ -29,13 +29,13 @@
     }
     .banner__title--sm {
       font-family: $fontEn1;
-      font-weight: 700;
-      text-shadow: 1px 1px 2px #555;
+      font-weight: 300;
+      text-shadow: 1px 1px 2px #aaa;
       display: flex;
       flex-direction: column;
 
       span {
-        color: #ffffffd0;
+        color: #ffffff;
         font-size: 1.125rem;
         text-align: center;
       }
