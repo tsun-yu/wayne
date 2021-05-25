@@ -12,7 +12,7 @@ function Portfolios(props) {
           workTitle="[React] React專題實作"
           workDes={[
             "- 使用框架：React",
-            "- 使用技術：Hooks(useState, useEffect), Redux, React-router,React-Bootstrap, Ant-Motion,SCSS",
+            "- 使用技術：Hooks(useState, useEffect), Redux, React-router, React-Bootstrap, Ant-Motion, SCSS",
             "- 手刻輪播牆",
           ]}
           workLink="https://react-pet.vercel.app/"
