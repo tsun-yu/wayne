@@ -9,8 +9,6 @@ function NavabarCommon(props) {
 
   let history = useHistory();
   let location = useLocation();
-  console.log(history);
-  console.log(location);
   const slr = (id) => document.querySelector(id);
 
   useEffect(() => {
