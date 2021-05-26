@@ -4,6 +4,7 @@ function Resume(props) {
   const [cvLink, setCvLink] = useState(
     "https://drive.google.com/file/d/1OEz-ICghvtmSOrj9QDS95y4RSqhcmQr8/preview"
   );
+
   const scrollTo = (ele) => {
     const distance =
       document.querySelector(ele).offsetTop -
@@ -19,15 +20,14 @@ function Resume(props) {
   const enLink =
     "https://drive.google.com/file/d/1XrdwWgqR4P5foeYhIFg6_fPOJD7ljfEU/preview";
 
-  useEffect(() => {
+  const colorToggle = (e, cv) => {
     document
       .querySelectorAll(".resume__opt>h1")
       .forEach((v) => v.classList.remove("cvSelected"));
-    cvLink === cnLink
-      ? document.querySelector("#cn-cv").classList.add("cvSelected")
-      : document.querySelector("#en-cv").classList.add("cvSelected");
-    return () => {};
-  }, [cvLink]);
+    e.target.classList.add("cvSelected");
+    scrollTo("#cv");
+    setCvLink(cv);
+  };
 
   return (
     <>
@@ -35,19 +35,17 @@ function Resume(props) {
         <div className="resume__opt">
           <h1
             id="cn-cv"
-            className=""
-            onClick={() => {
-              setCvLink(cnLink);
-              scrollTo("#cv");
+            className="cvSelected"
+            onClick={(e) => {
+              colorToggle(e, cnLink);
             }}
           >
             中文履歷
           </h1>
           <h1
             id="en-cv"
-            onClick={() => {
-              setCvLink(enLink);
-              scrollTo("#cv");
+            onClick={(e) => {
+              colorToggle(e, enLink);
             }}
           >
             英文履歷
