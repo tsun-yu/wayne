@@ -7,11 +7,13 @@
   .resume__opt {
     display: flex;
     justify-content: center;
+
     h1 {
       font-family: $fontCn;
       font-weight: 400;
       display: inline-block;
-      margin: 2rem;
+      padding-bottom: 0.5rem;
+      margin: 2rem 2rem 0;
       cursor: pointer;
       transition: 0.5s;
 
@@ -19,11 +21,15 @@
         color: $primary;
       }
     }
+    .cvSelected {
+      border-bottom: $primary solid 0.125rem;
+      color: $primary;
+    }
   }
   iframe {
     width: 80%;
     height: 100vh;
-    margin-bottom: 2rem;
+    margin: 1.5rem 0;
   }
 }
 

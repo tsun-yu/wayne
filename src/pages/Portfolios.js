@@ -12,7 +12,7 @@ function Portfolios(props) {
           workTitle="[React] React專題實作"
           workDes={[
             "- 使用框架：React",
-            "- 使用技術：Hooks(useState, useEffect), Redux, React-router,React-Bootstrap, Ant-Motion,SCSS",
+            "- 使用技術：Hooks(useState, useEffect), Redux, React-router, React-Bootstrap, Ant-Motion, SCSS",
             "- 手刻輪播牆",
           ]}
           workLink="https://react-pet.vercel.app/"
@@ -26,6 +26,16 @@ function Portfolios(props) {
             "以電商首頁作為範例，使用Bootstrap框架刻板，並做RWD響應式設計。",
           ]}
           workLink="https://tsun-yu.github.io/bootstrap-practice/bootstrap.html"
+          workName="Click me"
+        />
+        <WorkItem
+          imgSrc="/images/ins-ajax-bootstrap.png"
+          workTitle="[AJAX + Bootstrap] Instagram API"
+          workDes={[
+            "- 使用jQuery中的AJAX，並透過Instagram的API，獲取專頁上追蹤人數、大頭照、前12篇PO文照片等資訊，並利用Bootstrap切版呈現。",
+            "- 現在此API不提供非同源請求",
+          ]}
+          workLink="https://tsun-yu.github.io/images/ins-ajax-bootstrap.png"
           workName="Click me"
         />
         <WorkItem

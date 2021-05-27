@@ -25,23 +25,17 @@ function NavabarCommon(props) {
     return () => {};
   }, []);
   useEffect(() => {
-    switch (location.pathname) {
-      case "/portfolios":
-        resetColor();
-        slr("#nav-ports").classList.add("navbar__selected");
-        slr("#menu-ports").classList.add("menu__selected");
-        break;
-      case "/resume":
-        resetColor();
-        slr("#nav-resume").classList.add("navbar__selected");
-        slr("#menu-resume").classList.add("menu__selected");
-        break;
-      case "/contact":
-        resetColor();
-        slr("#nav-contact").classList.add("navbar__selected");
-        slr("#menu-contact").classList.add("menu__selected");
-        break;
-    }
+    resetColor();
+    const path = ["/portfolios", "/resume", "/contact"];
+    const id = ["ports", "resume", "contact"];
+
+    path.forEach((v, i) => {
+      if (location.pathname === v) {
+        slr(`#nav-${id[i]}`).classList.add("navbar__selected");
+        slr(`#menu-${id[i]}`).classList.add("menu__selected");
+      }
+    });
+
     return () => {};
   }, [location.pathname]);
 

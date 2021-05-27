@@ -1,3 +1,17 @@
+%skills-card {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 0;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 0.5s;
+}
+%all-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .skills {
   height: auto;
   padding: 0 10%;
@@ -8,37 +22,59 @@
     display: flex;
 
     .skills__category {
-      @extend %card-style;
       width: 23.75%;
-      text-align: center;
-      padding: 1.5rem 0;
-      transition: 0.5s;
+      position: relative;
+      cursor: pointer;
+      transform: perspective(1000px);
+      height: 20rem;
 
       &:not(:last-child) {
         margin-right: 1.6667%;
       }
-
-      &:hover {
+      &:hover .skills__category--cover,
+      .skills__category--back {
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
       }
 
-      h2 {
-        font-weight: 500;
-        font-size: 1.85rem;
-        color: #222222;
-        margin-top: 0;
-      }
+      .skills__category--cover {
+        @extend %card-style;
+        @extend %skills-card;
 
-      .skills__item {
-        line-height: 2rem;
         display: flex;
-        font-size: 1.25rem;
         justify-content: center;
         align-items: center;
-        margin: 1rem auto 0 0;
 
-        svg {
-          margin: 0 0.25rem;
+        &:hover h2 {
+          color: $primary;
+        }
+
+        h2 {
+          font-weight: 500;
+          font-size: 2rem;
+          color: #222222;
+          transition: 0.5s;
+        }
+      }
+      .skills__category--back {
+        @extend %card-style;
+        @extend %skills-card;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .skills__item {
+          line-height: 2rem;
+          font-size: 1.25rem;
+          margin: 1rem 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            margin: 0 0.25rem;
+          }
         }
       }
     }
@@ -47,15 +83,24 @@
 
 @media (max-width: 540px) {
   .skills {
-    height: auto;
-    margin-top: 5%;
-
     .skills__cards {
       flex-direction: column;
 
+      #en-skill {
+        height: 10rem;
+      }
+
       .skills__category {
         width: 100%;
+        height: 25rem;
         margin-bottom: 1rem;
+
+        .skills__category--cover {
+          box-sizing: border-box;
+        }
+        .skills__category--back {
+          box-sizing: border-box;
+        }
       }
     }
   }
