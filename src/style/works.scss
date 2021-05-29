@@ -2,43 +2,119 @@
   width: 80%;
   padding: 5% 10% 1rem;
 
-  .works__card {
-    @extend %card-style;
-    font-family: $fontEn1, $fontCn;
-    font-size: 1.25rem;
+  .work-section {
+    width: 100%;
     display: flex;
-    padding: 1rem 5%;
-    margin-bottom: 1rem;
-    min-height: 12rem;
-    transition: 0.5s;
-    &:hover {
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
+    flex-wrap: wrap;
 
-    .works__img {
-      width: 24%;
-      padding-right: 2%;
+    .works__card {
+      @extend %card-style;
+
+      display: flex;
+      justify-content: center;
+      width: 30%;
+      min-height: 14rem;
+      margin: 0 1.667% 2rem;
+      padding: 1rem;
+      box-sizing: border-box;
+      cursor: pointer;
       overflow: hidden;
+      position: relative;
 
-      img {
+      font: {
+        family: $fontEn1, $fontCn;
+        size: 1.25rem;
+      }
+      &:after {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        background-color: rgba(0, 0, 0, 0);
+        color: rgba(255, 255, 255, 0);
+        font-weight: 900;
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        white-space: pre;
+        text-align: center;
       }
-    }
-    .works__des {
-      padding-left: 2%;
-      width: 72%;
+      &:nth-child(1):after {
+        content: "REACT";
+      }
+      &:nth-child(2):after {
+        content: "BOOTSTRAP RWD";
+      }
+      &:nth-child(3):after {
+        content: "JQUERY-AJAX";
+      }
+      &:nth-child(4):after {
+        content: "JAVASCRIPT\A BLACK JACK";
+      }
+      &:nth-child(5):after {
+        content: "JAVASCRIPT\A 1A2B";
+      }
+      &:nth-child(6):after {
+        content: "JAVASCRIPT\A TODO-LIST";
+      }
 
-      h3 {
-        margin: 0 0 1rem 0;
-      }
-      p {
-        margin: 0 0 0.25rem 0;
-        a {
-          // text-decoration: none;
+      &:hover:not(.works__card--clicked) {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+        &:after {
+          background-color: rgba(0, 0, 0, 0.5);
           color: $primary;
         }
+        .works__img {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .works__img {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: 3s ease-out;
+        }
+      }
+      .works__des {
+        display: none;
+        padding-left: 2%;
+        width: 72%;
+
+        h3 {
+          margin: 0 0 1rem 0;
+        }
+        p {
+          margin: 0 0 0.25rem 0;
+          a {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .works__card--clicked {
+      width: 100%;
+      padding: 1rem 5%;
+      &:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .works__des {
+        display: block;
+      }
+
+      .works__img {
+        width: 24%;
+        margin-right: 2%;
       }
     }
   }
@@ -47,19 +123,38 @@
 @media (max-width: 540px) {
   .works {
     padding-top: 3.125rem;
-    .works__card {
+    .work-section {
       flex-direction: column;
-      padding: 0;
-      margin-bottom: 2.5rem;
-      .works__img {
+
+      .works__card {
+        flex-direction: column;
         width: 100%;
+        padding: 0;
+        margin: 0 0 2.5rem;
+        cursor: auto;
+
+        &:after {
+          display: none;
+        }
+
+        &:hover:not(.works__card--clicked) {
+          .works__img {
+            img {
+              transform: scale(1, 1);
+            }
+          }
+        }
+        .works__des {
+          display: block;
+          box-sizing: border-box;
+          padding: 5%;
+          width: 100%;
+        }
       }
-      .works__des {
-        box-sizing: border-box;
-        padding: 5%;
-        width: 100%;
-        p {
-          margin: 0 0 0.5rem 0;
+      .works__card--clicked {
+        .works__img {
+          width: 100%;
+          margin-right: 0;
         }
       }
     }

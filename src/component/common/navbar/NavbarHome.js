@@ -23,7 +23,7 @@ function NavabarHome(props) {
     window.addEventListener("scroll", () => {
       //縮小
       if (slr(".navbar__home") === null) {
-        return 0;
+        return;
       } else {
         document.body.clientWidth >= 540 && window.scrollY >= 50
           ? slr(".navbar__home").classList.add("navbar__sm")
