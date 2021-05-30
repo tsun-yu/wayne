@@ -32,11 +32,11 @@ function WorkItem(props) {
       <div
         className="works__card"
         onClick={(e) => {
-          setIsOpen((prev) => !prev);
-          open(e);
-          !isOpen &&
-            document.body.clientWidth >= 540 &&
-            scrollTo(e.currentTarget);
+          if (document.body.clientWidth >= 540) {
+            setIsOpen((prev) => !prev);
+            open(e);
+            !isOpen && scrollTo(e.currentTarget);
+          }
         }}
       >
         <div className="works__img">

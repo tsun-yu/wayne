@@ -104,6 +104,9 @@
     .works__card--clicked {
       width: 100%;
       padding: 1rem 5%;
+      &:after {
+        display: none;
+      }
       &:hover {
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
       }
