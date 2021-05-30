@@ -1,5 +1,5 @@
 import React from "react";
-import WorkItem from "../component/hompage/WorkItem";
+import WorkItem from "../component/portfolios/WorkItem";
 
 function Portfolios(props) {
   return (
