@@ -114,7 +114,7 @@ function NavabarHome(props) {
           </li>
 
           <li onClick={() => history.push("/portfolios")}>PORTFOLIOS</li>
-          <li onClick={() => history.push("/resume")}>RESUME</li>
+          {/* <li onClick={() => history.push("/resume")}>RESUME</li> */}
           <li onClick={() => history.push("/contact")}>CONTACT</li>
         </ul>
       </header>

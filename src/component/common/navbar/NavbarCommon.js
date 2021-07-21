@@ -65,9 +65,9 @@ function NavabarCommon(props) {
           <li id="nav-ports" onClick={() => history.push("/portfolios")}>
             PORTFOLIOS
           </li>
-          <li id="nav-resume" onClick={() => history.push("/resume")}>
+          {/* <li id="nav-resume" onClick={() => history.push("/resume")}>
             RESUME
-          </li>
+          </li> */}
           <li id="nav-contact" onClick={() => history.push("/contact")}>
             CONTACT
           </li>
