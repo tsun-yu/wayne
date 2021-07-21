@@ -33,7 +33,7 @@ function Menu(props) {
           >
             PORTFOLIOS
           </li>
-          <li
+          {/* <li
             id="menu-resume"
             onClick={() => {
               menuToggle("out");
@@ -41,7 +41,7 @@ function Menu(props) {
             }}
           >
             RESUME
-          </li>
+          </li> */}
           <li
             id="menu-contact"
             onClick={() => {

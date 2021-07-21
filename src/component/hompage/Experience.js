@@ -11,6 +11,16 @@ function Experience(props) {
           <h1>Timeline</h1>
           <div className="exp__content">
             <ExperienceItem
+              date="2021/7 - now"
+              category="工作經歷"
+              title="前端工程師"
+              des="勤業眾信 Taipei, Taiwan"
+              content={[
+                "- 前端技術：Vue, Bootstrap, jQuery&Plugins",
+                "- 負責內容：內部系統界面開發",
+              ]}
+            />
+            <ExperienceItem
               date="2020/7 - 2020/11(4mos)"
               category="訓練經歷"
               title="資策會 前端工程師就業養成班"

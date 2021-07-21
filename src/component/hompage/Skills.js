@@ -79,7 +79,9 @@ function Skills(props) {
                 <SiPostman /> Postman, JSON Server
               </>,
               <>
-                <SiPython /> Python(Numpy, Pandas)
+                <SiPython /> Python
+                {/* <br />
+                (Numpy, Pandas) */}
               </>,
             ]}
           />
