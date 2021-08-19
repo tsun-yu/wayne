@@ -54,6 +54,7 @@ function NavabarHome(props) {
       }
     });
 
+    slr("#menu-home").classList.add("menu__selected");
     return () => {};
   }, []);
 

@@ -1,29 +1,23 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router";
 
 function Menu(props) {
   const { menuToggle } = props;
   const history = useHistory();
-  const location = useLocation();
-
-  const home = (
-    <>
-      <li
-        onClick={() => {
-          menuToggle("out");
-          history.push("/");
-        }}
-      >
-        HOME
-      </li>
-    </>
-  );
 
   return (
     <>
       <div className="menu">
         <ul>
-          {location.pathname !== "/" && home}
+          <li
+            id="menu-home"
+            onClick={() => {
+              menuToggle("out");
+              history.push("/");
+            }}
+          >
+            HOME
+          </li>
           <li
             id="menu-ports"
             onClick={() => {
