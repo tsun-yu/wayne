@@ -46,8 +46,26 @@ function NavabarCommon(props) {
         <span id="logo" onClick={() => history.push("/")}>
           WAYNE
         </span>
-        <div className="navbar__ham">
-          <GiHamburgerMenu
+        <ul
+          className="navbarHam"
+          onClick={(e) => {
+            console.log("click1");
+            document.querySelectorAll(`.navbarHam>li`).forEach((v) => {
+              if (v.classList.contains("navbarHam__bar--active")) {
+                v.classList.remove("navbarHam__bar--active");
+                // menuToggle("out");
+              } else {
+                console.log("click");
+                v.classList.add("navbarHam__bar--active");
+                // menuToggle("in");
+              }
+            });
+          }}
+        >
+          <li id="hamBar1"></li>
+          <li id="hamBar2"></li>
+          <li id="hamBar3"></li>
+          {/* <GiHamburgerMenu
             id="menu-ham"
             size={35}
             color={"#333"}
@@ -59,9 +77,9 @@ function NavabarCommon(props) {
             color={"#333"}
             style={{ display: "none" }}
             onClick={() => menuToggle("out")}
-          />
-        </div>
-        <ul>
+          /> */}
+        </ul>
+        <ul className="navber__options">
           <li id="nav-ports" onClick={() => history.push("/portfolios")}>
             PORTFOLIOS
           </li>
