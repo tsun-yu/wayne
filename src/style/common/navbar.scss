@@ -38,6 +38,23 @@
   .navbar__progress--common {
     background-color: rgba(253, 195, 0, 0.5);
   }
+  .navbar__options {
+    position: absolute;
+    display: flex;
+    padding: 0;
+    margin: 0 2rem;
+    right: 0;
+    font-family: $fontEn2;
+
+    li {
+      margin: 0 1rem;
+      list-style: none;
+      cursor: pointer;
+    }
+    .navbar__selected {
+      color: $primary;
+    }
+  }
   .navbarHam {
     display: none;
     cursor: pointer;
@@ -72,7 +89,7 @@
       transform: scaleX(0);
     }
   }
-  .navber__options {
+  .navbar__options {
     position: absolute;
     display: flex;
     padding: 0;
@@ -125,7 +142,7 @@
       display: flex;
       flex-direction: column;
     }
-    .navber__options {
+    .navbar__options {
       display: none;
     }
     span {

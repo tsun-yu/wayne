@@ -74,52 +74,16 @@ function NavabarHome(props) {
         <ul
           className="navbarHam"
           onClick={(e) => {
-            console.log("click1");
-            document.querySelectorAll(`.navbarHam>li`).forEach((v) => {
-              if (v.classList.contains("navbarHam__bar--active")) {
-                v.classList.remove("navbarHam__bar--active");
-                // menuToggle("out");
-              } else {
-                console.log("click");
-                v.classList.add("navbarHam__bar--active");
-                // menuToggle("in");
-              }
-            });
+            slr(".menu").classList.contains("menu__appear")
+              ? menuToggle("out")
+              : menuToggle("in");
           }}
         >
           <li id="hamBar1"></li>
           <li id="hamBar2"></li>
           <li id="hamBar3"></li>
-          {/* <GiHamburgerMenu
-            id="menu-ham"
-            size={35}
-            color={"#333"}
-            onClick={() => menuToggle("in")}
-          />
-          <MdClose
-            id="menu-close"
-            size={35}
-            color={"#333"}
-            style={{ display: "none" }}
-            onClick={() => menuToggle("out")}
-          /> */}
         </ul>
-        {/* <div className="navbar__ham">
-          <GiHamburgerMenu
-            id="menu-ham"
-            size={35}
-            color={"#333"}
-            onClick={() => menuToggle("in")}
-          />
-          <MdClose
-            id="menu-close"
-            size={35}
-            color={"#333"}
-            style={{ display: "none" }}
-            onClick={() => menuToggle("out")}
-          />
-        </div> */}
-        <ul>
+        <ul className="navbar__options">
           <li
             id="nav-about"
             onClick={() => {

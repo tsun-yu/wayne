@@ -18,13 +18,15 @@ function Navbar(props) {
     if (action === "in") {
       slr("body").classList.add("noscroll");
       slr(".menu").classList.add("menu__appear");
-      // slr("#menu-ham").style.display = "none";
-      // slr("#menu-close").style.display = "block";
+      document.querySelectorAll(`.navbarHam>li`).forEach((v) => {
+        v.classList.add("navbarHam__bar--active");
+      });
     } else {
+      document.querySelectorAll(`.navbarHam>li`).forEach((v) => {
+        v.classList.remove("navbarHam__bar--active");
+      });
       slr("body").classList.remove("noscroll");
       slr(".menu").classList.remove("menu__appear");
-      // slr("#menu-ham").style.display = "block";
-      // slr("#menu-close").style.display = "none";
     }
   };
 

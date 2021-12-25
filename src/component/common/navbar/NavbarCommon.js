@@ -46,40 +46,8 @@ function NavabarCommon(props) {
         <span id="logo" onClick={() => history.push("/")}>
           WAYNE
         </span>
-        <ul
-          className="navbarHam"
-          onClick={(e) => {
-            console.log("click1");
-            document.querySelectorAll(`.navbarHam>li`).forEach((v) => {
-              if (v.classList.contains("navbarHam__bar--active")) {
-                v.classList.remove("navbarHam__bar--active");
-                // menuToggle("out");
-              } else {
-                console.log("click");
-                v.classList.add("navbarHam__bar--active");
-                // menuToggle("in");
-              }
-            });
-          }}
-        >
-          <li id="hamBar1"></li>
-          <li id="hamBar2"></li>
-          <li id="hamBar3"></li>
-          {/* <GiHamburgerMenu
-            id="menu-ham"
-            size={35}
-            color={"#333"}
-            onClick={() => menuToggle("in")}
-          />
-          <MdClose
-            id="menu-close"
-            size={35}
-            color={"#333"}
-            style={{ display: "none" }}
-            onClick={() => menuToggle("out")}
-          /> */}
-        </ul>
-        <ul className="navber__options">
+
+        <ul className="navbar__options">
           <li id="nav-ports" onClick={() => history.push("/portfolios")}>
             PORTFOLIOS
           </li>
@@ -89,6 +57,18 @@ function NavabarCommon(props) {
           <li id="nav-contact" onClick={() => history.push("/contact")}>
             CONTACT
           </li>
+        </ul>
+        <ul
+          className="navbarHam"
+          onClick={() => {
+            slr(".menu").classList.contains("menu__appear")
+              ? menuToggle("out")
+              : menuToggle("in");
+          }}
+        >
+          <li id="hamBar1"></li>
+          <li id="hamBar2"></li>
+          <li id="hamBar3"></li>
         </ul>
       </header>
       <Menu resetColor={resetColor} menuToggle={menuToggle} />
