@@ -38,10 +38,58 @@
   .navbar__progress--common {
     background-color: rgba(253, 195, 0, 0.5);
   }
-  .navbar__ham {
-    display: none;
+  .navbar__options {
+    position: absolute;
+    display: flex;
+    padding: 0;
+    margin: 0 2rem;
+    right: 0;
+    font-family: $fontEn2;
+
+    li {
+      margin: 0 1rem;
+      list-style: none;
+      cursor: pointer;
+    }
+    .navbar__selected {
+      color: $primary;
+    }
   }
-  ul {
+  .navbarHam {
+    display: none;
+    cursor: pointer;
+
+    li {
+      background-color: #000;
+      width: 20px;
+      height: 2px;
+      transition: 0.5s;
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+
+    #hamBar1,
+    #hamBar3 {
+      transform-origin: 0px 1px;
+    }
+    #hamBar2 {
+      width: 12px;
+      transform-origin: 0px 0px;
+    }
+    #hamBar1.navbarHam__bar--active {
+      transform: rotate(45deg) scaleX(1.3);
+    }
+    #hamBar3.navbarHam__bar--active {
+      transform: rotate(-45deg) scaleX(1.3);
+    }
+    #hamBar2.navbarHam__bar--active {
+      transform: scaleX(0);
+    }
+  }
+  .navbar__options {
     position: absolute;
     display: flex;
     padding: 0;
@@ -88,13 +136,13 @@
       background-color: $primary;
       box-shadow: none;
     }
-    .navbar__ham {
+    .navbarHam {
       display: block;
       margin-right: 1rem;
       display: flex;
-      align-items: center;
+      flex-direction: column;
     }
-    ul {
+    .navbar__options {
       display: none;
     }
     span {

@@ -46,22 +46,8 @@ function NavabarCommon(props) {
         <span id="logo" onClick={() => history.push("/")}>
           WAYNE
         </span>
-        <div className="navbar__ham">
-          <GiHamburgerMenu
-            id="menu-ham"
-            size={35}
-            color={"#333"}
-            onClick={() => menuToggle("in")}
-          />
-          <MdClose
-            id="menu-close"
-            size={35}
-            color={"#333"}
-            style={{ display: "none" }}
-            onClick={() => menuToggle("out")}
-          />
-        </div>
-        <ul>
+
+        <ul className="navbar__options">
           <li id="nav-ports" onClick={() => history.push("/portfolios")}>
             PORTFOLIOS
           </li>
@@ -71,6 +57,18 @@ function NavabarCommon(props) {
           <li id="nav-contact" onClick={() => history.push("/contact")}>
             CONTACT
           </li>
+        </ul>
+        <ul
+          className="navbarHam"
+          onClick={() => {
+            slr(".menu").classList.contains("menu__appear")
+              ? menuToggle("out")
+              : menuToggle("in");
+          }}
+        >
+          <li id="hamBar1"></li>
+          <li id="hamBar2"></li>
+          <li id="hamBar3"></li>
         </ul>
       </header>
       <Menu resetColor={resetColor} menuToggle={menuToggle} />
