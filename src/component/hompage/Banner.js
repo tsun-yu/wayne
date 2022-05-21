@@ -5,9 +5,12 @@ function Banner(props) {
     <>
       <div className="banner">
         <div className="banner__cover">
-          <span className="banner__title animate__animated animate__flipInX animate__slow">
-            I am <span className="banner__title--primary">Wayne</span> Huang
-          </span>
+          <div className="banner__title animate__animated animate__flipInX animate__slow">
+            <p>Hello</p>
+            <p>
+              I'm <span className="banner__title--primary">Wayne</span>
+            </p>
+          </div>
 
           <hr />
           <div className="banner__title--sm">

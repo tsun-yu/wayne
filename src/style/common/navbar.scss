@@ -2,6 +2,7 @@
 
 .navbar__home {
   height: 6.25rem;
+  transition: 0.5s;
 
   span {
     display: none;
@@ -30,13 +31,7 @@
     height: 100%;
     z-index: -2;
     left: 0;
-  }
-  .navbar__progress--home {
-    // box-shadow: inset 0px 0px 10px 5px rgba(235, 235, 235, 0.541);
-    background-color: rgb(255, 255, 255);
-  }
-  .navbar__progress--common {
-    background-color: rgba(253, 195, 0, 0.5);
+     background-color: rgba(253, 195, 0, 0.5);
   }
   .navbar__options {
     position: absolute;

@@ -3,6 +3,9 @@ import { FiMail, FiInstagram, FiGithub } from "react-icons/fi";
 import { SiLinkedin } from "react-icons/si";
 
 function Contact(props) {
+  const today = new Date();
+  const mos = today.getMonth() - 2;
+  const yrs = mos > 0 ? today.getFullYear() - 1995 : today.getFullYear() - 1996;
   return (
     <>
       <div className="contact">
@@ -13,14 +16,17 @@ function Contact(props) {
               <div className="contact__des">
                 <h3>
                   I'm Wayne Huang
-                  <br />a 26-year-old Front-end Engineer from Taipe, Taiwan
+                  <br />a {yrs}-year-old Front-end Engineer from Taipe, Taiwan
                 </h3>
                 <p>
-                  I'm specialised in front-end. React is what I use most of the
-                  time, in combination with redux and SCSS.
-                  <br /> In the front-end field, I'll keep learing new
-                  technology, back-end knowledge and other popular framework,
-                  like Vue and Angular.
+                  I'm specialised in front-end. React is the first framework I
+                  learned at first, in combination with redux, SCSS and
+                  react-router.
+                  <br />
+                  After entering Deloitte, I began to learn another popular
+                  framework, Vue, and used it in my works.
+                  <br />
+                  I'm keeping learing new technology or back-end knowledge
                   <br />I wish I can became a senior or a fullstack engineer one
                   day!
                 </p>
