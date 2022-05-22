@@ -22,13 +22,12 @@ function NavabarHome(props) {
 
     window.addEventListener("scroll", () => {
       //縮小
-      if (slr(".navbar__home") === null) {
-        return;
-      } else {
-        document.body.clientWidth >= 540 && window.scrollY >= 50
-          ? slr(".navbar__home").classList.add("navbar__sm")
-          : slr(".navbar__home").classList.remove("navbar__sm");
-      }
+      if (slr(".navbar__home") === null) return;
+
+      document.body.clientWidth >= 540 && window.scrollY >= 1
+        ? slr(".navbar__home").classList.add("navbar__sm")
+        : slr(".navbar__home").classList.remove("navbar__sm");
+
       //網頁高度
       const documentHeight = document.body.offsetHeight;
       //視窗高度

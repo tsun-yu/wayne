@@ -1,7 +1,7 @@
 import React from "react";
 
 function ExperienceItem(props) {
-  const { date, category, title, des, content } = props;
+  const { date, period, category, title, des, content } = props;
 
   let contentBr = content.map((v) => (
     <>
@@ -14,6 +14,8 @@ function ExperienceItem(props) {
       <ul className="exp__item">
         <li className="exp__date">
           {date}
+          <br />
+          {period}
           <br />
           {category}
         </li>
