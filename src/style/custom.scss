@@ -4,8 +4,27 @@ $fontEn2: "Poiret One", cursive;
 $fontEn3: "Pacifico", cursive;
 $fontCn: "Noto Serif TC", serif;
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Pacifico&family=Poiret+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Pacifico&family=Poiret+One&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Pacifico;
+  src: url(../assets/fonts/Pacifico/Pacifico-Regular.ttf);
+}
+@font-face {
+  font-family: 'Noto Serif TC';
+  src: url(../assets/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf);
+}
+@font-face {
+  font-family: 'Poiret One';
+  src: url(../assets/fonts/Poiret_One/PoiretOne-Regular.ttf);
+}
+
+
 
 .topic {
   font-size: 3rem;
