@@ -7,19 +7,19 @@ function Experience(props) {
   const yrs = today.getFullYear() - 2022;
   const mos = today.getMonth() + 6 + 12 * yrs;
 
-  useEffect(() => {
-    // document.querySelector(".exp__content").addEventListener("scroll", () => {
-    //   document.querySelector(".exp__content").scrollTop > 1 &&
-    //     document
-    //       .querySelector(".exp__coverTop")
-    //       .classList.add("exp__coverTop--active");
-    //   document.querySelector(".exp__content").scrollTop === 0 &&
-    //     document
-    //       .querySelector(".exp__coverTop")
-    //       .classList.remove("exp__coverTop--active");
-    // });
-    return () => {};
-  }, []);
+  // useEffect(() => {
+  //   document.querySelector(".exp__content").addEventListener("scroll", () => {
+  //     document.querySelector(".exp__content").scrollTop > 1 &&
+  //       document
+  //         .querySelector(".exp__coverTop")
+  //         .classList.add("exp__coverTop--active");
+  //     document.querySelector(".exp__content").scrollTop === 0 &&
+  //       document
+  //         .querySelector(".exp__coverTop")
+  //         .classList.remove("exp__coverTop--active");
+  //   });
+  //   return () => {};
+  // }, []);
 
   return (
     <>
