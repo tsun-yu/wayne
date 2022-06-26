@@ -20,17 +20,20 @@
         size: 6rem;
         weight: 100;
       }
+
       color: #ffffff;
       text-shadow: 1px 1px 2px #555;
 
-      p{
+      p {
         margin: 0;
         line-height: 8rem;
       }
+
       .banner__title--primary {
         color: $primary;
       }
     }
+
     .banner__title--sm {
       font-family: $fontEn1;
       font-weight: 300;
@@ -43,6 +46,7 @@
         font-size: 1.125rem;
         text-align: center;
       }
+
       span:nth-child(2) {
         color: $primary;
       }
@@ -53,13 +57,25 @@
 @media (max-width: 540px) {
   .banner {
     height: 100vh;
+
     .banner__cover {
       .banner__title {
         font-size: 4rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
+
+        p {
+          line-height: 7rem;
+        }
+
+        .banner__title--lg {
+          line-height: 5rem;
+          font-size: 5rem;
+        }
+
+
       }
+
       .banner__title--sm {
         span {
           font-size: 1rem;
