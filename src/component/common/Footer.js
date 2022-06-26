@@ -3,11 +3,12 @@ import { useLocation } from "react-router";
 
 function Footer(props) {
   const location = useLocation();
+  const currentYr = new Date().getFullYear();
   const homeFooter = (
     <>
       <footer className="home__footer">
         <div>
-          <p>Copyright © 2021 Wayne All rights reserved.</p>
+          <p>Copyright © {currentYr} Wayne All rights reserved.</p>
         </div>
       </footer>
     </>
@@ -15,7 +16,7 @@ function Footer(props) {
   const commonFooter = (
     <>
       <footer className="common__footer">
-        <p>Copyright © 2021 Wayne All rights reserved.</p>
+        <p>Copyright © {currentYr} Wayne All rights reserved.</p>
       </footer>
     </>
   );
