@@ -3,12 +3,13 @@ import React from "react";
 function ExperienceItem(props) {
   const { date, period, category, title, des, content } = props;
 
-  let contentBr = content.map((v) => (
-    <>
+  let contentBr = content.map((v, i) => (
+    <div key={i}>
       {v}
       <br />
-    </>
+    </div>
   ));
+
   return (
     <>
       <ul className="exp__item">
@@ -23,7 +24,7 @@ function ExperienceItem(props) {
         <li className="exp__description">
           <h3>{title}</h3>
           <p>{des}</p>
-          <div>{contentBr}</div>
+          {contentBr}
         </li>
       </ul>
     </>
