@@ -7,11 +7,9 @@
   display: flex;
   justify-content: center;
   background: rgb(204, 204, 204);
-  background: linear-gradient(
-    0deg,
-    rgba(204, 204, 204, 1) 0%,
-    rgba(245, 245, 245, 1) 29%
-  );
+  background: linear-gradient(0deg,
+      rgba(204, 204, 204, 1) 0%,
+      rgba(245, 245, 245, 1) 29%);
 
   .about {
     position: absolute;
@@ -27,18 +25,22 @@
     .about__content {
       text-align: center;
       font-family: $fontCn;
+
       h1 {
         font: {
           size: 1.5rem;
           weight: 500;
         }
+
         color: $primary;
       }
+
       .about__intro {
         font: {
           weight: 500;
           size: 1.25rem;
         }
+
         padding: 0 6rem;
         color: #333;
         margin: 2rem;
@@ -46,27 +48,34 @@
     }
   }
 }
+
 @media (max-width: 540px) {
   .about-section {
     width: 100%;
     height: auto;
     background-color: #f5f5f5;
     background: #f5f5f5;
+
     .about {
       position: static;
       margin: 0;
       width: 100%;
       border-radius: 0;
+      padding: 2rem 1rem;
+
 
       .about__content {
         p:nth-child(1) {
           font-size: 1.25rem;
         }
+
         p {
           margin: 1rem 0;
         }
+
         .about__intro {
           font-size: 1rem;
+          margin: 0;
           padding: 0;
         }
       }
