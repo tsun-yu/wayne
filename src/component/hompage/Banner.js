@@ -6,7 +6,7 @@ function Banner(props) {
       <div className="banner">
         <div className="banner__cover">
           <div className="banner__title animate__animated animate__flipInX animate__slow">
-            <p>Hello</p>
+            <p className="banner__title--lg">Hello</p>
             <p>
               I'm <span className="banner__title--primary">Wayne</span>
             </p>
