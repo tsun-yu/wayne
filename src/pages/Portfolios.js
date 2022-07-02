@@ -10,6 +10,18 @@ function Portfolios(props) {
         <div className="work-section">
           <WorkItem
             id="work1"
+            imgSrc="/images/vue-weather-app.png"
+            workTitle="[Vue] 城市天氣搜尋"
+            workDes={[
+              "- 使用框架：Vue",
+              "- 使用技術：Vue CLI, Composition API, SCSS, Fetch",
+              "透過 Open Weather API 獲取各城市當下天氣資訊並顯示",
+            ]}
+            workLink="https://vue-weather-app-opal.vercel.app/"
+            workName="Vue Weather App"
+          />
+          <WorkItem
+            id="work1"
             imgSrc="/images/straymao.png"
             workTitle="[React] React專題實作"
             workDes={[
