@@ -17,8 +17,8 @@ function Experience(props) {
         return;
       }
 
-      if (expContent.scrollTop === 0)
-        coverTop.classList.remove("exp__coverTop--active");
+      // if (expContent.scrollTop === 0)
+      //   coverTop.classList.remove("exp__coverTop--active");
     });
     return () => {};
   }, []);
