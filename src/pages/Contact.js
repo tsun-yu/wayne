@@ -20,13 +20,12 @@ function Contact(props) {
                 </h3>
                 <p>
                   I'm specialised in front-end. React is the first framework I
-                  learned at first, in combination with redux, SCSS and
-                  react-router.
+                  learned, in combination with redux, SCSS and react-router.
                   <br />
                   After entering Deloitte, I began to learn another popular
-                  framework, Vue, and used it in my works.
+                  framework, Vue, by myself and use it in my projects.
                   <br />
-                  I'm keeping learing new technology or back-end knowledge
+                  I'm keeping learing new technologies or back-end knowledge
                   <br />I wish I can became a senior or a fullstack engineer one
                   day!
                 </p>
