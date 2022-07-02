@@ -8,18 +8,18 @@ function Experience(props) {
   const mos = today.getMonth() + 6 + 12 * yrs;
 
   useEffect(() => {
-    const expContent = document.querySelector(".exp__content");
-    const coverTop = document.querySelector(".exp__coverTop");
+    // const expContent = document.querySelector(".exp__content");
+    // const coverTop = document.querySelector(".exp__coverTop");
 
-    expContent.addEventListener("scroll", () => {
-      if (expContent.scrollTop > 1) {
-        coverTop.classList.add("exp__coverTop--active");
-        return;
-      }
+    // expContent.addEventListener("scroll", () => {
+    //   if (expContent.scrollTop > 1) {
+    //     coverTop.classList.add("exp__coverTop--active");
+    //     return;
+    // }
 
-      // if (expContent.scrollTop === 0)
-      //   coverTop.classList.remove("exp__coverTop--active");
-    });
+    // if (expContent.scrollTop === 0)
+    //   coverTop.classList.remove("exp__coverTop--active");
+    // });
     return () => {};
   }, []);
 
