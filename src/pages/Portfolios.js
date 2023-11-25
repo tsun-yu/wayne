@@ -9,12 +9,36 @@ function Portfolios(props) {
         <hr />
         <div className="work-section">
           <WorkItem
-            id="work1"
+            id="work9"
+            imgSrc="/images/chatroom.png"
+            workTitle="[React] Chatroom"
+            workDes={[
+              "- 使用框架：React",
+              "- 使用技術：TypeScript, styled-component, firebase(Realtime Database & Authentication)",
+              "透過Firebase 提供的 Realtime Database 服務，做出聊天室的功能",
+            ]}
+            workLink="https://chatroom-react-nu.vercel.app/"
+            workName="Chatroom - React"
+          />
+          <WorkItem
+            id="work8"
+            imgSrc="/images/money-app.png"
+            workTitle="[React] Money App"
+            workDes={[
+              "- 使用框架：React",
+              "- 使用技術：TypeScript, styled-component, firebase(Firestore Database & Authentication)",
+              "透過Firebase 提供的 Authentication 服務，做會員登入註冊功能，以及 Firestore Database 的服務作為資料庫",
+            ]}
+            workLink="https://firebase-react-money-app.vercel.app/"
+            workName="Money App - React"
+          />
+          <WorkItem
+            id="work7"
             imgSrc="/images/vue-weather-app.png"
             workTitle="[Vue] 城市天氣搜尋"
             workDes={[
               "- 使用框架：Vue",
-              "- 使用技術：Vue CLI, Composition API, SCSS, Fetch",
+              "- 使用技術：Vue CLI, Composition API, SCSS",
               "透過 Open Weather API 獲取各城市當下天氣資訊並顯示",
             ]}
             workLink="https://vue-weather-app-opal.vercel.app/"
@@ -26,14 +50,14 @@ function Portfolios(props) {
             workTitle="[React] React專題實作"
             workDes={[
               "- 使用框架：React",
-              "- 使用技術：Hooks(useState, useEffect), Redux, React-router, React-Bootstrap, Ant-Motion, SCSS",
+              "- 使用技術：Redux, React-router, React-Bootstrap, Ant-Motion, SCSS",
               "- 手刻輪播牆",
             ]}
             workLink="https://react-pet.vercel.app/"
             workName="Stary Mao"
           />
 
-          <WorkItem
+          {/* <WorkItem
             id="work2"
             imgSrc="/images/bootstrap-practice.png"
             workTitle="[Bootstrap] 電商首頁RWD切版"
@@ -83,7 +107,7 @@ function Portfolios(props) {
             ]}
             workLink="https://tsun-yu.github.io/js-practice/todolist/todolist.html"
             workName="Click me"
-          />
+          /> */}
         </div>
       </div>
     </>
