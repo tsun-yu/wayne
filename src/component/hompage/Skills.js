@@ -41,7 +41,7 @@ function Skills(props) {
                 <>
                   <SiCss3 /> CSS3
                 </>,
-                "BEM 命名",
+                "BEM 命名法",
                 <>
                   <SiBootstrap /> Bootstrap 4
                 </>,
@@ -60,7 +60,7 @@ function Skills(props) {
                 <>
                   <SiJquery /> jQuery
                 </>,
-                "AJAX / Fetch",
+                "AJAX",
                 "Promise / Async Await",
                 "RESTful API",
               ]}
@@ -77,8 +77,8 @@ function Skills(props) {
                 <>
                   <SiRedux /> Redux
                 </>,
-                "Functional component",
                 "React Hooks",
+                "Zustand",
               ]}
             />
             <SkillItem
@@ -92,7 +92,6 @@ function Skills(props) {
                 </>,
                 "Vue-router",
                 "Vuex",
-                "Vue CLI",
               ]}
             />
             <SkillItem
@@ -106,9 +105,6 @@ function Skills(props) {
                 </>,
                 <>
                   <SiGithub /> Github
-                </>,
-                <>
-                  <IoGitBranch /> Git Flow and Branch
                 </>,
                 <>
                   <SiPostman /> Postman
