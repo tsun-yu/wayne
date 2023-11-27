@@ -1,5 +1,5 @@
-import React from "react";
-import { useEffect } from "react/cjs/react.development";
+import React, { useEffect } from "react";
+
 import ExperienceItem from "./ExperienceItem";
 
 function Experience(props) {
@@ -8,21 +8,21 @@ function Experience(props) {
   const mos = today.getMonth() + 6 + 12 * yrs;
 
   //local可以但vercel會噴錯
-  // useEffect(() => {
-  //   const expContent = document.querySelector(".exp__content");
-  //   const coverTop = document.querySelector(".exp__coverTop");
+  useEffect(() => {
+    const expContent = document.querySelector(".exp__content");
+    const coverTop = document.querySelector(".exp__coverTop");
 
-  //   expContent.addEventListener("scroll", () => {
-  //     if (expContent.scrollTop > 1) {
-  //       coverTop.classList.add("exp__coverTop--active");
-  //       return;
-  //     }
+    expContent.addEventListener("scroll", () => {
+      if (expContent.scrollTop > 1) {
+        coverTop.classList.add("exp__coverTop--active");
+        return;
+      }
 
-  //     if (expContent.scrollTop === 0)
-  //       coverTop.classList.remove("exp__coverTop--active");
-  //   });
-  //   return () => {};
-  // }, []);
+      if (expContent.scrollTop === 0)
+        coverTop.classList.remove("exp__coverTop--active");
+    });
+    return () => {};
+  }, []);
 
   return (
     <>
