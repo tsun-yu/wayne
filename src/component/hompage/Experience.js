@@ -4,8 +4,10 @@ import ExperienceItem from "./ExperienceItem";
 
 function Experience(props) {
   const today = new Date();
-  const yrs = today.getFullYear() - 2022;
-  const mos = today.getMonth() + 6 + 12 * yrs;
+  const currMon = today.getMonth();
+  const currYr = today.getFullYear();
+  const mos = currMon > 5 ? currMon - 6 : currMon;
+  const yrs = currMon > 5 ? currYr - 2021 : currYr - 2022;
 
   //local可以但vercel會噴錯
   useEffect(() => {
@@ -37,7 +39,7 @@ function Experience(props) {
             <div className="exp__content">
               <ExperienceItem
                 date="2021/7 - now"
-                period={`(${mos}mos)`}
+                period={`(${yrs}yrs ${mos > 0 ? mos + "mos" : ""})`}
                 category="工作經歷"
                 title="前端工程師"
                 des="勤業眾信 Taipei, Taiwan"
@@ -89,7 +91,7 @@ function Experience(props) {
               />
               <ExperienceItem
                 date="2013/9 - 2017/6"
-                period="(3yr 10mos)"
+                period="(3yrs 10mos)"
                 category="學習經歷"
                 title="東吳大學 國際貿易學系"
                 des="Soochow University, Taipei, Taiwan"
