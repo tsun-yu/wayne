@@ -1,113 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WorkItem from "../component/portfolios/WorkItem";
+import { getDataFromFirebase } from "../util/fetchData";
+import PuffLoader from "react-spinners/PuffLoader";
 
 function Portfolios(props) {
+  const [works, setWorks] = useState([]);
+  const [isLoading, setIsLoading] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getDataFromFirebase("portfolios");
+      setWorks(data);
+      setIsLoading(false);
+    };
+    getData();
+  }, []);
+
+  const worksDisplay = works.map(
+    ({ img, title, description, link, name, key }) => {
+      return (
+        <WorkItem
+          imgSrc={img}
+          workTitle={title}
+          workDes={description}
+          workLink={link}
+          workName={name}
+          key={key}
+        />
+      );
+    }
+  );
   return (
     <>
       <div className="works">
         <div className="topic">PORTFOLIOS</div>
         <hr />
         <div className="work-section">
-          <WorkItem
-            id="work9"
-            imgSrc="/images/chatroom.png"
-            workTitle="[React] Chatroom"
-            workDes={[
-              "- 使用框架：React",
-              "- 使用技術：TypeScript, styled-component, firebase(Realtime Database & Authentication)",
-              "透過Firebase 提供的 Realtime Database 服務，做出聊天室的功能",
-            ]}
-            workLink="https://chatroom-react-nu.vercel.app/"
-            workName="Chatroom - React"
-          />
-          <WorkItem
-            id="work8"
-            imgSrc="/images/money-app.png"
-            workTitle="[React] Money App"
-            workDes={[
-              "- 使用框架：React",
-              "- 使用技術：TypeScript, styled-component, firebase(Firestore Database & Authentication)",
-              "透過Firebase 提供的 Authentication 服務，做會員登入註冊功能，以及 Firestore Database 的服務作為資料庫",
-            ]}
-            workLink="https://firebase-react-money-app.vercel.app/"
-            workName="Money App - React"
-          />
-          <WorkItem
-            id="work7"
-            imgSrc="/images/vue-weather-app.png"
-            workTitle="[Vue] 城市天氣搜尋"
-            workDes={[
-              "- 使用框架：Vue",
-              "- 使用技術：Vue CLI, Composition API, SCSS",
-              "透過 Open Weather API 獲取各城市當下天氣資訊並顯示",
-            ]}
-            workLink="https://vue-weather-app-opal.vercel.app/"
-            workName="Vue Weather App"
-          />
-          <WorkItem
-            id="work1"
-            imgSrc="/images/straymao.png"
-            workTitle="[React] React專題實作"
-            workDes={[
-              "- 使用框架：React",
-              "- 使用技術：Redux, React-router, React-Bootstrap, Ant-Motion, SCSS",
-              "- 手刻輪播牆",
-            ]}
-            workLink="https://react-pet.vercel.app/"
-            workName="Stary Mao"
-          />
-
-          {/* <WorkItem
-            id="work2"
-            imgSrc="/images/bootstrap-practice.png"
-            workTitle="[Bootstrap] 電商首頁RWD切版"
-            workDes={[
-              "以電商首頁作為範例，使用Bootstrap框架刻板，並做RWD響應式設計。",
-            ]}
-            workLink="https://tsun-yu.github.io/bootstrap-practice/bootstrap.html"
-            workName="Click me"
-          />
-          <WorkItem
-            id="work3"
-            imgSrc="/images/ins-ajax-bootstrap.png"
-            workTitle="[AJAX + Bootstrap] Instagram API"
-            workDes={[
-              "- 使用jQuery中的AJAX，並透過Instagram的API，獲取專頁上追蹤人數、大頭照、前12篇PO文照片等資訊，並利用Bootstrap切版呈現。",
-              "- 現在此API不提供非同源請求",
-            ]}
-            workLink="https://tsun-yu.github.io/images/ins-ajax-bootstrap.png"
-            workName="Click me"
-          />
-          <WorkItem
-            id="work4"
-            imgSrc="/images/black-jack.png"
-            workTitle="[JavaScript] Black Jack 21點"
-            workDes={[
-              "利用Class產生一副52張撲克牌並洗牌，莊家點數若小於玩家點數或17點就會要牌；Ace同時可以當作11點或1點，會依照目前的總和自動判斷。",
-            ]}
-            workLink="https://tsun-yu.github.io/js-practice/black-jack/index.html"
-            workName="Click me"
-          />
-          <WorkItem
-            id="work5"
-            imgSrc="/images/1A2B.png"
-            workTitle="[JavaScript] 猜數字"
-            workDes={[
-              "電腦隨機出一組4個不重複的數字，使用者猜出該組答案，數字及位置皆正確即為A，數字對位置錯即為B，依提示猜出最終答案。",
-            ]}
-            workLink="https://tsun-yu.github.io/js-practice/guess/guess.html"
-            workName="Click me"
-          />
-          <WorkItem
-            id="work6"
-            imgSrc="/images/todo-list.png"
-            workTitle="[JavaScript] Todo-list 代辦事項"
-            workDes={[
-              "使用者可以新增、修改、刪除任何記事，內容皆存在Local Storage中",
-            ]}
-            workLink="https://tsun-yu.github.io/js-practice/todolist/todolist.html"
-            workName="Click me"
-          /> */}
+          {<PuffLoader color="#fdc300" loading={isLoading} />}
+          {worksDisplay}
         </div>
       </div>
     </>

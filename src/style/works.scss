@@ -45,7 +45,7 @@
       }
 
       &:nth-child(1):after {
-        content: "VUE";
+        content: "REACT";
       }
 
       &:nth-child(2):after {
@@ -53,23 +53,11 @@
       }
 
       &:nth-child(3):after {
-        content: "BOOTSTRAP RWD";
+        content: "VUE";
       }
 
       &:nth-child(4):after {
-        content: "JQUERY-AJAX";
-      }
-
-      &:nth-child(5):after {
-        content: "JAVASCRIPT\A BLACK JACK";
-      }
-
-      &:nth-child(6):after {
-        content: "JAVASCRIPT\A 1A2B";
-      }
-
-      &:nth-child(7):after {
-        content: "JAVASCRIPT\A TODO-LIST";
+        content: "REACT";
       }
 
       &:hover:not(.works__card--clicked) {
