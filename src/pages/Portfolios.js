@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import WorkItem from "../component/portfolios/WorkItem";
-import { getDataFromFirebase } from "../util/firebase";
+import { getDataFromFirebase } from "../util/fetchData";
 import PuffLoader from "react-spinners/PuffLoader";
 
 function Portfolios(props) {
@@ -9,7 +9,6 @@ function Portfolios(props) {
   useEffect(() => {
     const getData = async () => {
       const data = await getDataFromFirebase("portfolios");
-      console.log(data);
       setWorks(data);
       setIsLoading(false);
     };

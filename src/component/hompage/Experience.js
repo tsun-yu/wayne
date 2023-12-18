@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ExperienceItem from "./ExperienceItem";
-import { getDataFromFirebase } from "../../util/firebase";
+import { getDataFromFirebase } from "../../util/fetchData";
 import PuffLoader from "react-spinners/PuffLoader";
 
 function Experience(props) {
