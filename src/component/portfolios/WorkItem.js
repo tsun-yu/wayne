@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { getImageURLFromStorage } from "../../util/fetchData";
 
 function WorkItem(props) {
   const { imgSrc, workTitle, workDes, workLink, workName } = props;
+  const [imgUrl, setImgUrl] = useState("");
+  useEffect(() => {
+    const getImg = async () => {
+      const url = await getImageURLFromStorage("portfolios", imgSrc);
+      setImgUrl(url);
+    };
+    getImg();
+  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,11 +49,10 @@ function WorkItem(props) {
         }}
       >
         <div className="works__img">
-          <img src={imgSrc} alt="port-img" />
+          <img src={imgUrl} alt="port-img" />
         </div>
         <div className="works__des">
           <h3>{workTitle}</h3>
-
           <p>{workDesBr}</p>
           <p>
             連結：
