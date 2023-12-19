@@ -5,12 +5,12 @@ function WorkItem(props) {
   const { imgSrc, workTitle, workDes, workLink, workName } = props;
   const [imgUrl, setImgUrl] = useState("");
   useEffect(() => {
+    const getImg = async () => {
+      const url = await getImageURLFromStorage("portfolios", imgSrc);
+      setImgUrl(url);
+    };
     getImg();
   }, []);
-  const getImg = async () => {
-    const url = await getImageURLFromStorage("portfolios", imgSrc);
-    setImgUrl(url);
-  };
 
   const [isOpen, setIsOpen] = useState(false);
 
