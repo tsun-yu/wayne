@@ -1,105 +1,111 @@
-.contact {
-  height: calc(100vh - 6.25rem);
+// .contact {
+//     height: calc(100vh - 6.25rem);
 
-  .contact__profile--bg {
-    background-color: #eee;
-    height: 85%;
-    width: 100%;
-    position: relative;
+//     .contact__profile--bg {
+//         background-color: #eee;
+//         height: 85%;
+//         width: 100%;
+//         position: relative;
 
-    .contact__profile {
-      display: flex;
-      justify-content: center;
-      height: 90%;
-      width: 100%;
-      position: absolute;
-      bottom: calc((100vh - 6.25rem) * -0.15);
+//         .contact__profile {
+//             display: flex;
+//             justify-content: center;
+//             height: 90%;
+//             width: 100%;
+//             position: absolute;
+//             bottom: calc((100vh - 6.25rem) * -0.15);
 
-      img {
-        height: 100%;
-      }
-      .contact__content {
-        width: 35%;
-        max-width: 30rem;
-        margin: 0 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+//             img {
+//                 height: 100%;
+//             }
 
-        .contact__des {
-          font-family: $fontEn1;
+//             .contact__content {
+//                 width: 35%;
+//                 max-width: 30rem;
+//                 margin: 0 2rem;
+//                 display: flex;
+//                 flex-direction: column;
+//                 justify-content: space-between;
 
-          h3 {
-            font-size: 1.6rem;
-            color: #505050;
-            margin: 0;
-          }
-          p {
-            font-size: 1.125rem;
-            color: #333;
-            font-weight: 100;
-          }
-        }
-        .contact__icons {
-          width: 100%;
-          height: calc((100vh - 6.25rem) * 0.15);
-          display: flex;
-          align-items: center;
+//                 .contact__des {
+//                     font-family: $fontEn1;
 
-          .contact__link {
-            color: #333;
-            margin-right: 2rem;
-          }
-        }
-      }
-    }
-  }
-}
+//                     h3 {
+//                         font-size: 1.6rem;
+//                         color: #505050;
+//                         margin: 0;
+//                     }
 
-@media (max-width: 540px) {
-  .contact {
-    height: auto;
+//                     p {
+//                         font-size: 1.125rem;
+//                         color: #333;
+//                         font-weight: 100;
+//                     }
+//                 }
 
-    .contact__profile--bg {
-      padding-top: 4rem;
-      height: auto;
-      position: static;
+//                 .contact__icons {
+//                     width: 100%;
+//                     height: calc((100vh - 6.25rem) * 0.15);
+//                     display: flex;
+//                     align-items: center;
 
-      .contact__profile {
-        height: auto;
-        position: static;
-        flex-direction: column;
-        align-items: center;
+//                     .contact__link {
+//                         color: #333;
+//                         margin-right: 2rem;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-        img {
-          width: 50%;
-          height: auto;
-        }
-        .contact__content {
-          width: 100%;
-          margin: 0;
-          display: block;
+// @media (max-width: 540px) {
+//     .contact {
+//         height: auto;
 
-          .contact__des {
-            text-align: center;
-            h3 {
-              margin: 1rem 0;
-            }
-            p {
-            }
-          }
-          .contact__icons {
-            height: auto;
-            justify-content: center;
-            padding: 2rem 0;
-            background-color: #f5f5f5;
+//         .contact__profile--bg {
+//             padding-top: 4rem;
+//             height: auto;
+//             position: static;
 
-            .contact__link {
-              margin: 0 1rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+//             .contact__profile {
+//                 height: auto;
+//                 position: static;
+//                 flex-direction: column;
+//                 align-items: center;
+
+//                 img {
+//                     width: 50%;
+//                     height: auto;
+//                 }
+
+//                 .contact__content {
+//                     width: 100%;
+//                     margin: 0;
+//                     display: block;
+
+//                     .contact__des {
+//                         text-align: center;
+
+//                         h3 {
+//                             margin: 1rem 0;
+//                         }
+
+//                         p {}
+//                     }
+
+//                     .contact__icons {
+//                         height: auto;
+//                         justify-content: center;
+//                         padding: 2rem 0;
+//                         background-color: #f5f5f5;
+
+//                         .contact__link {
+//                             margin: 0 1rem;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
