@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 //components
 import Navbar from "./component/common/Navbar";
+import Dock from "./component/common/Dock";
 import Footer from "./component/common/Footer";
 import MainContent from "./component/common/MainContent";
 import ScrollToTop from "./component/common/ScrollToTop";
@@ -35,6 +36,7 @@ function App() {
     <HashRouter>
       <>
         <Navbar />
+        <Dock />
         <ScrollToTop>
           <MainContent>
             <BiArrowToTop
