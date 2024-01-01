@@ -1,16 +1,27 @@
-import React from "react";
-import { SiGithub, SiGmail, SiInstagram, SiLinkedin } from "react-icons/si";
-import { HiMiniDocumentArrowDown } from "react-icons/hi2";
+import React, { useEffect, useState } from "react";
+import { SiGithub, SiGmail, SiGoogledocs, SiLinkedin } from "react-icons/si";
 
 import styled from "styled-components";
+import { getImageURLFromStorage } from "../../util/fetchData";
 
 function Banner(props) {
+  const [portraitUrl, setPortraitUrl] = useState("");
+  const [cvUrl, setCvUrl] = useState("");
+  useEffect(() => {
+    const getImg = async () => {
+      const portraitUrl = await getImageURLFromStorage("home", "portrait.jpg");
+      setPortraitUrl(portraitUrl);
+      const cvUrl = await getImageURLFromStorage("docs", "cv.pdf");
+      setCvUrl(cvUrl);
+    };
+    getImg();
+  }, []);
   return (
     <>
       <Cover>
         <div className="cover">
           <div className="portrait">
-            <img src="./images/portrait1.jpg" alt="portrait" />
+            <img src={portraitUrl} alt="portrait" />
           </div>
           <div>
             <div className="animate__animated animate__flipInX animate__slow">
@@ -28,6 +39,7 @@ function Banner(props) {
                 rel="noreferrer"
                 className="contact"
               >
+                <p className="contact__text">Mail</p>
                 <p className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiGmail size={40} color={"#d44638"} />
@@ -41,6 +53,7 @@ function Banner(props) {
                 target="_blank"
                 className="contact"
               >
+                <p className="contact__text">Github</p>
                 <p className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiGithub size={40} color={"#6e5494"} />
@@ -54,6 +67,7 @@ function Banner(props) {
                 target="_blank"
                 className="contact"
               >
+                <p className="contact__text">Linkedin</p>
                 <p className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiLinkedin size={40} color={"#0A66C2"} id="linkedinIcon" />
@@ -61,17 +75,19 @@ function Banner(props) {
                 </p>
                 <SiLinkedin size={40} color={"#555"} />
               </a>
-              <a href="" rel="noreferrer" target="_blank" className="contact">
+              <a
+                href={cvUrl}
+                rel="noreferrer"
+                target="_blank"
+                className="contact"
+              >
+                <p className="contact__text">CV</p>
                 <p className="contact__icon ">
                   <p className="contact__icon--hover">
-                    <HiMiniDocumentArrowDown
-                      size={50}
-                      color={"#0F9D58"}
-                      id="docIcon"
-                    />
+                    <SiGoogledocs size={40} color={"#0F9D58"} id="docIcon" />
                   </p>
                 </p>
-                <HiMiniDocumentArrowDown size={50} color={"#555"} />
+                <SiGoogledocs size={40} color={"#555"} />
               </a>
             </div>
           </div>
@@ -161,10 +177,31 @@ const Cover = styled.div`
           .contact__icon {
             grid-template-rows: 1fr;
           }
+
+          .contact__text {
+            /* display: block; */
+            background-color: #fdc300;
+            color: #fff;
+          }
         }
 
         p {
           margin: 0;
+        }
+
+        .contact__text {
+          font-family: "Poppins", "Trebuchet MS";
+          position: absolute;
+          bottom: -1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #fdc30000;
+          border-radius: 1rem;
+          color: #ffffff00;
+          padding-inline: 0.5rem;
+          transition: all.3s ease-in;
+          transition-delay: 0.3s;
+          /* display: none; */
         }
 
         .contact__icon {
