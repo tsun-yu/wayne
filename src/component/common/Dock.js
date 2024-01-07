@@ -124,7 +124,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 1rem;
   width: 100%;
-  z-index: 999;
+  z-index: 9;
   display: flex;
   justify-content: center;
 
