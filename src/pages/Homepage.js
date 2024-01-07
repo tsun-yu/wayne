@@ -8,11 +8,9 @@ function Homepage(props) {
   return (
     <>
       <Banner />
-      <div>
-        <AboutMe />
-        <Skills />
-        <Experience />
-      </div>
+      <AboutMe />
+      <Skills />
+      <Experience />
     </>
   );
 }

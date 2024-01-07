@@ -10,20 +10,25 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
+
 main {
   background-color: #f5f5f5;
 }
+
 hr {
   border: 0;
   height: 4px;
   background-color: $primary;
   width: 50px;
-  margin: 30px auto;
+  margin: .5rem auto 1.875rem;
 }
+
 .toTop {
   position: fixed;
   right: 2rem;

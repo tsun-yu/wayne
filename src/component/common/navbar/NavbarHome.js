@@ -14,7 +14,7 @@ function NavabarHome(props) {
   const scrollDistance = (e) => e.offsetTop - slr(".navbar__home").offsetHeight;
 
   useEffect(() => {
-    //每個區塊需滾動的距離
+    //每個區塊需滾動的距離
     const homeContents = Array.from(
       document.querySelectorAll(".home-content"),
       (v) => scrollDistance(v)
@@ -83,7 +83,7 @@ function NavabarHome(props) {
           <li id="hamBar3"></li>
         </ul>
         <ul className="navbar__options">
-          <li
+          {/* <li
             id="nav-about"
             onClick={() => {
               scrollTo(".about-section");
@@ -91,7 +91,6 @@ function NavabarHome(props) {
           >
             ABOUT
           </li>
-
           <li
             id="nav-skill"
             onClick={() => {
@@ -100,7 +99,6 @@ function NavabarHome(props) {
           >
             SKILLS
           </li>
-
           <li
             id="nav-exp"
             onClick={() => {
@@ -109,10 +107,8 @@ function NavabarHome(props) {
           >
             EXPERIENCE
           </li>
-
           <li onClick={() => history.push("/portfolios")}>PORTFOLIOS</li>
-          {/* <li onClick={() => history.push("/resume")}>RESUME</li> */}
-          <li onClick={() => history.push("/contact")}>CONTACT</li>
+          <li onClick={() => history.push("/contact")}>CONTACT</li> */}
         </ul>
       </header>
       <Menu menuToggle={menuToggle} />

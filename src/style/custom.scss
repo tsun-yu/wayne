@@ -11,14 +11,17 @@ $fontCn: "Noto Serif TC", serif;
   font-family: Poppins;
   src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
 }
+
 @font-face {
   font-family: Pacifico;
   src: url(../assets/fonts/Pacifico/Pacifico-Regular.ttf);
 }
+
 @font-face {
   font-family: 'Noto Serif TC';
   src: url(../assets/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf);
 }
+
 @font-face {
   font-family: 'Poiret One';
   src: url(../assets/fonts/Poiret_One/PoiretOne-Regular.ttf);
@@ -38,8 +41,10 @@ $fontCn: "Noto Serif TC", serif;
 %card-style {
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-  border-radius: 0.3125rem;
+  // border-radius: 0.3125rem;
+  border-radius: 1.5rem;
 }
+
 @media (max-width: 540px) {
   .topic {
     font-size: 2.5rem;

@@ -36,7 +36,7 @@ function Menu(props) {
           >
             RESUME
           </li> */}
-          <li
+          {/* <li
             id="menu-contact"
             onClick={() => {
               menuToggle("out");
@@ -44,7 +44,7 @@ function Menu(props) {
             }}
           >
             CONTACT
-          </li>
+          </li> */}
         </ul>
       </div>
     </>
