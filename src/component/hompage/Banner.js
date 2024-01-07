@@ -25,10 +25,12 @@ function Banner(props) {
           </div>
           <div>
             <div className="animate__animated animate__flipInX animate__slow">
-              <p className="banner__title banner__title--lg">Hello</p>
-              <p className="banner__title">
-                I'm <span className="banner__title--primary">Wayne</span>
-              </p>
+              <div>
+                <p className="banner__title banner__title--lg">Hello</p>
+                <p className="banner__title">
+                  I'm <span className="banner__title--primary">Wayne</span>
+                </p>
+              </div>
               <p className="banner__des">
                 A frontend engineer in Deloitte Taiwan.
               </p>
@@ -98,7 +100,7 @@ function Banner(props) {
 }
 
 const Cover = styled.div`
-  height: 100vh;
+  min-height: 100dvh;
   padding: 2rem;
   position: relative;
 
@@ -119,7 +121,9 @@ const Cover = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    height: 100%;
+    /* height: 100%; */
+    min-height: calc(100dvh - 4rem);
+    width: 100%;
     background-color: #ffffff9e;
     backdrop-filter: blur(10px);
     border-radius: 1.5rem;
@@ -128,7 +132,7 @@ const Cover = styled.div`
 
     .portrait {
       flex: 0 0 22rem;
-      height: 22rem;
+      aspect-ratio: 1/1;
       border-radius: 50%;
       overflow: hidden;
       border: 0.5rem solid #fdc300;
@@ -139,19 +143,19 @@ const Cover = styled.div`
 
       img {
         width: 20rem;
-        height: 20rem;
+        aspect-ratio: 1/1;
         border-radius: 50%;
       }
     }
 
     .banner__title {
       font-family: "Pacifico", cursive;
-      font-size: 4.5rem;
+      font-size: min(16vw, 4.5rem);
       font-weight: 100;
       color: #ffffff;
       text-shadow: 1px 1px 2px #aaa;
       margin: 0;
-      line-height: 5rem;
+      line-height: min(16vw, 5rem);
 
       .banner__title--primary {
         color: #fdc300;
@@ -159,7 +163,7 @@ const Cover = styled.div`
     }
     .banner__des {
       font-family: "Pacifico", cursive;
-      font-size: 2rem;
+      font-size: min(10vw, 2rem);
       margin: 1rem 0 0;
       color: #333;
     }
@@ -199,8 +203,8 @@ const Cover = styled.div`
           border-radius: 1rem;
           color: #ffffff00;
           padding-inline: 0.5rem;
-          transition: all.3s ease-in;
-          transition-delay: 0.3s;
+          /* transition: all.3s ease-in; */
+          transition-delay: 0.5s;
           /* display: none; */
         }
 
@@ -208,13 +212,50 @@ const Cover = styled.div`
           display: grid;
           grid-template-rows: 0fr;
           overflow: hidden;
-          transition: 0.3s ease-in;
+          transition: 0.5s ease-in;
           position: absolute;
 
           .contact__icon--hover {
             min-height: 0;
             overflow: hidden;
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 830px) {
+    .cover {
+      flex-wrap: wrap;
+      padding: 1.5rem;
+
+      .animate__flipInX {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .banner__des {
+          text-align: center;
+        }
+      }
+      .contacts {
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  @media (max-width: 540px) {
+    padding: 1rem;
+
+    .cover {
+      min-height: calc(100dvh - 2rem);
+      flex-wrap: wrap;
+      gap: 1rem;
+      .portrait {
+        flex-basis: 90%;
+
+        img {
+          width: 95%;
         }
       }
     }
