@@ -85,6 +85,7 @@ function Dock(props) {
             }}
           >
             <FcManager size={iconSize} />
+            <p className="dock__text">About Me</p>
           </p>
           <p
             className="dock__icon"
@@ -93,6 +94,7 @@ function Dock(props) {
             }}
           >
             <FcCommandLine size={iconSize} />
+            <p className="dock__text">Skills</p>
           </p>
           <p
             className="dock__icon"
@@ -101,6 +103,7 @@ function Dock(props) {
             }}
           >
             <FcTimeline size={iconSize} />
+            <p className="dock__text">Experience</p>
           </p>
           <p
             className="dock__icon"
@@ -109,6 +112,7 @@ function Dock(props) {
             }}
           >
             <FcPicture size={iconSize} />
+            <p className="dock__text">Porfolios</p>
           </p>
         </div>
       </Container>
@@ -130,7 +134,7 @@ const Container = styled.div`
     align-items: center;
     border-radius: 1.5rem;
     background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
     padding-inline: 0.5rem;
     height: 5rem;
 
@@ -138,6 +142,39 @@ const Container = styled.div`
       margin: 0;
       padding: 0.5rem;
       cursor: pointer;
+      position: relative;
+
+      &:hover {
+        .dock__text {
+          display: block;
+        }
+      }
+
+      .dock__text {
+        display: none;
+        font-family: "Poppins", "Trebuchet MS";
+        color: #333;
+        position: absolute;
+        background-color: #fff;
+        top: -3.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding: 0.5rem 1rem;
+        width: max-content;
+        border-radius: 1rem;
+        box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.12);
+
+        &::after {
+          content: "";
+          border: 8px solid #ffffff00;
+          border-top: 8px solid #fff;
+          bottom: -16px;
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;
+        }
+      }
 
       svg {
         position: relative;
