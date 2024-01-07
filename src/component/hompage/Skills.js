@@ -8,8 +8,6 @@ function Skills(props) {
   useEffect(() => {
     const getData = async () => {
       const data = await getDataFromFirebase("skills");
-      // const data = await getDataFromFirebase("testing");
-      console.log(data);
       setSkills(data);
     };
     getData();
