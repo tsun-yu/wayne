@@ -1,86 +1,86 @@
-.banner {
-  background-size: cover;
-  background-position: center;
-  // height: calc(100vh + 4.5rem);
-  background-image: url(../../images/nyc.jpg);
-  // background-attachment: fixed;
+// .banner {
+//   background-size: cover;
+//   background-position: center;
+//   // height: calc(100vh + 4.5rem);
+//   background-image: url(../../images/nyc.jpg);
+//   // background-attachment: fixed;
 
-  .banner__cover {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+//   .banner__cover {
+//     height: 100%;
+//     width: 100%;
+//     background-color: rgba(255, 255, 255, 0.3);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
 
-    .banner__title {
-      font: {
-        family: $fontEn3;
-        size: 6rem;
-        weight: 100;
-      }
+//     .banner__title {
+//       font: {
+//         family: $fontEn3;
+//         size: 6rem;
+//         weight: 100;
+//       }
 
-      color: #ffffff;
-      text-shadow: 1px 1px 2px #555;
+//       color: #ffffff;
+//       text-shadow: 1px 1px 2px #555;
 
-      p {
-        margin: 0;
-        line-height: 8rem;
-      }
+//       p {
+//         margin: 0;
+//         line-height: 8rem;
+//       }
 
-      .banner__title--primary {
-        color: $primary;
-      }
-    }
+//       .banner__title--primary {
+//         color: $primary;
+//       }
+//     }
 
-    .banner__title--sm {
-      font-family: $fontEn1;
-      font-weight: 300;
-      text-shadow: 1px 1px 2px #aaa;
-      display: flex;
-      flex-direction: column;
+//     .banner__title--sm {
+//       font-family: $fontEn1;
+//       font-weight: 300;
+//       text-shadow: 1px 1px 2px #aaa;
+//       display: flex;
+//       flex-direction: column;
 
-      span {
-        color: #ffffff;
-        font-size: 1.125rem;
-        text-align: center;
-      }
+//       span {
+//         color: #ffffff;
+//         font-size: 1.125rem;
+//         text-align: center;
+//       }
 
-      span:nth-child(2) {
-        color: $primary;
-      }
-    }
-  }
-}
+//       span:nth-child(2) {
+//         color: $primary;
+//       }
+//     }
+//   }
+// }
 
-@media (max-width: 540px) {
-  .banner {
-    height: 100vh;
+// @media (max-width: 540px) {
+//   .banner {
+//     height: 100vh;
 
-    .banner__cover {
-      .banner__title {
-        font-size: 4rem;
-        display: flex;
-        flex-direction: column;
+//     .banner__cover {
+//       .banner__title {
+//         font-size: 4rem;
+//         display: flex;
+//         flex-direction: column;
 
-        p {
-          line-height: 7rem;
-        }
+//         p {
+//           line-height: 7rem;
+//         }
 
-        .banner__title--lg {
-          line-height: 5rem;
-          font-size: 5rem;
-        }
+//         .banner__title--lg {
+//           line-height: 5rem;
+//           font-size: 5rem;
+//         }
 
 
-      }
+//       }
 
-      .banner__title--sm {
-        span {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-}
+//       .banner__title--sm {
+//         span {
+//           font-size: 1rem;
+//         }
+//       }
+//     }
+//   }
+// }
