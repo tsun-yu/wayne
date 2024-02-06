@@ -9,7 +9,7 @@ function ExperienceItem(props) {
       const today = new Date();
       const currMon = today.getMonth();
       const currYr = today.getFullYear();
-      const mos = currMon > 5 ? currMon - 6 : currMon;
+      const mos = currMon > 5 ? currMon - 6 : currMon + 6;
       const yrs = currMon > 5 ? currYr - 2021 : currYr - 2022;
       setCalcPeriod(`${yrs}yrs ${mos > 0 ? mos + "mos" : ""}`);
     }
