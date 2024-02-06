@@ -31,7 +31,7 @@ function Navbar(props) {
   };
 
   return location.pathname === "/" ? (
-    <NavabarHome resetColor={resetColor} menuToggle={menuToggle} />
+    <NavabarHome />
   ) : (
     <NavbarCommon resetColor={resetColor} menuToggle={menuToggle} />
   );

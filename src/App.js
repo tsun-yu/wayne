@@ -14,42 +14,17 @@ import NotFoundPage from "./pages/NotFounPage";
 import Portfolios from "./pages/Portfolios";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
-
-//icon
-import { BiArrowToTop } from "react-icons/bi";
+import ToTopBtn from "./component/common/ToTopBtn";
 
 function App() {
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const documentHeight = document.body.offsetHeight;
-      const windowHeight = window.innerHeight;
-      let scrollHeight = window.scrollY;
-      let progressPercent =
-        (100 * scrollHeight) / (documentHeight - windowHeight);
-
-      progressPercent >= 10
-        ? (document.querySelector(".toTop").style.display = "block")
-        : (document.querySelector(".toTop").style.display = "none");
-    });
-  }, []);
   return (
     <HashRouter>
       <>
         <Navbar />
         <Dock />
+        <ToTopBtn />
         <ScrollToTop>
           <MainContent>
-            <BiArrowToTop
-              size={50}
-              className="toTop"
-              style={{ display: "none" }}
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
-              }}
-            />
             <Switch>
               <Route path="/" exact>
                 <Homepage />
