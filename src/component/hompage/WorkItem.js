@@ -12,7 +12,6 @@ function WorkItem(props) {
     workName,
     currIdx,
     itemIdx,
-    worksLength,
     transition,
   } = props;
   const [imgUrl, setImgUrl] = useState("");
