@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import WorkItem from "./WorkItem";
 import { getDataFromFirebase } from "../../util/fetchData";
 import PuffLoader from "react-spinners/PuffLoader";
@@ -6,7 +6,35 @@ import styled from "styled-components";
 
 function Portfolios(props) {
   const [works, setWorks] = useState([]);
+  const worksLength = useMemo(() => works.length, [works]);
+  const worksListForSlide = useMemo(() => {
+    return [...works.slice(-2), ...works, ...works.slice(0, 2)];
+  }, [works]);
   const [isLoading, setIsLoading] = useState([]);
+  const [currIdx, setCurrIdx] = useState(1.5);
+  const [transition, setTransition] = useState(0);
+  const translateX = useMemo(() => {
+    return `${-25 * currIdx}%`;
+  }, [currIdx]);
+
+  useEffect(() => {
+    if (currIdx !== worksLength + 1.5 && currIdx !== 0.5) return;
+    const timer = setTimeout(() => {
+      setTransition(0);
+      if (currIdx === worksLength + 1.5) setCurrIdx(1.5);
+      if (currIdx === 0.5) setCurrIdx(worksLength + 0.5);
+    }, transition);
+
+    return () => clearTimeout(timer);
+  }, [currIdx]);
+
+  const slideHadler = (direction) => {
+    const newIdx = currIdx + direction;
+    if (newIdx < 0.5 || newIdx > worksLength + 1.5) return;
+    setTransition(500);
+    setCurrIdx(newIdx);
+  };
+
   useEffect(() => {
     const getData = async () => {
       const data = await getDataFromFirebase("portfolios");
@@ -16,8 +44,8 @@ function Portfolios(props) {
     getData();
   }, []);
 
-  const worksDisplay = works.map(
-    ({ img, title, description, link, name, key }) => {
+  let worksDisplay = worksListForSlide.map(
+    ({ img, title, description, link, name, key }, i) => {
       return (
         <WorkItem
           imgSrc={img}
@@ -25,7 +53,10 @@ function Portfolios(props) {
           workDes={description}
           workLink={link}
           workName={name}
-          key={key}
+          key={key + i}
+          currIdx={currIdx}
+          itemIdx={i}
+          transition={transition}
         />
       );
     }
@@ -37,8 +68,19 @@ function Portfolios(props) {
           <div className="topic">PORTFOLIOS</div>
           <hr />
           <div className="work-section">
+            <div className="backArea" onClick={() => slideHadler(-1)}></div>
+            <div className="forwardArea" onClick={() => slideHadler(1)}></div>
             {<PuffLoader color="#fdc300" loading={isLoading} />}
-            {worksDisplay}
+            <div
+              className="worksWrap"
+              style={{
+                transition: `${transition}ms`,
+                transform: `translateX(${translateX})`,
+                width: `${25 * (worksLength + 4)}%`,
+              }}
+            >
+              {worksDisplay}
+            </div>
           </div>
         </div>
       </Container>
@@ -49,132 +91,35 @@ function Portfolios(props) {
 const Container = styled.div`
   .works {
     width: 100%;
-    padding: 5% 10% 1rem;
+    padding: 5% 0 0;
 
     .work-section {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      padding-bottom: 1rem;
+      position: relative;
 
-      .works__card {
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-        border-radius: 1.5rem;
-        display: flex;
-        justify-content: center;
-        width: 90%;
-        min-height: 14rem;
-        margin: 0 auto 2rem;
-        padding: 1rem;
-        box-sizing: border-box;
+      .backArea,
+      .forwardArea {
+        position: absolute;
+        top: 0;
+        width: 25%;
+        height: 100%;
         cursor: pointer;
-        overflow: hidden;
-        position: relative;
-
-        font: {
-          family: $fontEn1, $fontCn;
-          size: 1.25rem;
-        }
-
-        &:after {
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0);
-          color: rgba(255, 255, 255, 0);
-          font-weight: 900;
-          font-size: 2rem;
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: 0.5s;
-          white-space: pre;
-          text-align: center;
-        }
-
-        &:nth-child(1):after {
-          content: "REACT";
-        }
-
-        &:nth-child(2):after {
-          content: "REACT";
-        }
-
-        &:nth-child(3):after {
-          content: "VUE";
-        }
-
-        &:nth-child(4):after {
-          content: "REACT";
-        }
-
-        &:hover:not(.works__card--clicked) {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-
-          &:after {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: $primary;
-          }
-
-          .works__img {
-            img {
-              transform: scale(1.2);
-            }
-          }
-        }
-
-        .works__img {
-          width: 100%;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 3s ease-out;
-          }
-        }
-
-        .works__des {
-          display: none;
-          padding-left: 2%;
-          width: 72%;
-
-          h3 {
-            margin: 0 0 1rem 0;
-          }
-
-          p {
-            margin: 0 0 0.25rem 0;
-
-            a {
-              color: $primary;
-            }
-          }
-        }
+        z-index: 1;
+      }
+      .backArea {
+        left: 0;
+        background: linear-gradient(270deg, #f5f5f500 0%, #f5f5f5 100%);
       }
 
-      .works__card--clicked {
-        width: 100%;
-        padding: 1rem 5%;
+      .forwardArea {
+        right: 0;
+        background: linear-gradient(90deg, #f5f5f500 0%, #f5f5f5 100%);
+      }
+      overflow: hidden;
 
-        &:after {
-          display: none;
-        }
-
-        &:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .works__des {
-          display: block;
-        }
-
-        .works__img {
-          width: 24%;
-          margin-right: 2%;
-        }
+      .worksWrap {
+        display: flex;
       }
     }
   }
@@ -185,40 +130,6 @@ const Container = styled.div`
 
       .work-section {
         flex-direction: column;
-
-        .works__card {
-          flex-direction: column;
-          width: 100%;
-          padding: 0;
-          margin: 0 0 2.5rem;
-          cursor: auto;
-
-          &:after {
-            display: none;
-          }
-
-          &:hover:not(.works__card--clicked) {
-            .works__img {
-              img {
-                transform: scale(1, 1);
-              }
-            }
-          }
-
-          .works__des {
-            display: block;
-            box-sizing: border-box;
-            padding: 5%;
-            width: 100%;
-          }
-        }
-
-        .works__card--clicked {
-          .works__img {
-            width: 100%;
-            margin-right: 0;
-          }
-        }
       }
     }
   }
