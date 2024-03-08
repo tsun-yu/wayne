@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { getImageURLFromStorage } from "../../util/fetchData";
 import styled from "styled-components";
@@ -14,13 +14,10 @@ function WorkItem(props) {
     itemIdx,
     transition,
   } = props;
-
-  const [isFront, setIsFront] = useState(true);
-  const coverDeg = useMemo(() => (isFront ? 0 : -180), [isFront]);
-  const backDeg = useMemo(() => (isFront ? -180 : 0), [isFront]);
   const [imgUrl, setImgUrl] = useState("");
   const cardClass = classNames({
-    "works__card--sm": currIdx + 1.5 === itemIdx || currIdx - 0.5 === itemIdx,
+    works__card: true,
+    small: currIdx + 1.5 === itemIdx || currIdx - 0.5 === itemIdx,
   });
 
   useEffect(() => {
@@ -31,6 +28,23 @@ function WorkItem(props) {
     getImg();
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const open = (e) => {
+    isOpen
+      ? e.currentTarget.classList.remove("works__card--clicked")
+      : e.currentTarget.classList.add("works__card--clicked");
+  };
+
+  const scrollDistance = (e) =>
+    e.offsetTop - document.querySelector(".navbar__sm").offsetHeight;
+
+  const scrollTo = (e) => {
+    window.scrollTo({
+      top: scrollDistance(e),
+      behavior: "smooth",
+    });
+  };
   let workDesBr = workDes.map((v) => (
     <>
       {v}
@@ -40,21 +54,11 @@ function WorkItem(props) {
 
   return (
     <>
-      <Card
-        className={cardClass}
-        style={{ transition: `${transition}ms` }}
-        onClick={() => setIsFront((prev) => !prev)}
-      >
-        <div
-          className="works__card works__img"
-          style={{ transform: `rotateX(${coverDeg}deg)` }}
-        >
+      <Card className={cardClass} style={{ transition: `${transition}ms` }}>
+        <div className="works__img">
           <img src={imgUrl} alt="port-img" />
         </div>
-        <div
-          className="works__card works__des"
-          style={{ transform: `rotateX(${backDeg}deg)` }}
-        >
+        <div className="works__des">
           <h3>{workTitle}</h3>
           <p>{workDesBr}</p>
           <p>
@@ -69,60 +73,114 @@ function WorkItem(props) {
   );
 }
 const Card = styled.div`
-  width: calc(50% - 2rem);
-  min-height: 20rem;
-  aspect-ratio: 16/9;
-  margin: 1rem;
-  box-sizing: border-box;
-  flex-shrink: 0;
   transition: 0.5s ease-in;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  border-radius: 1.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  width: calc(25% - 2rem);
+  box-sizing: border-box;
   cursor: pointer;
-  transform: perspective(1000px);
-  position: relative;
-  font-family: "Poppins", "Trebuchet MS", "Noto Serif TC", serif;
-  font-size: 1.25rem;
+  overflow: hidden;
 
-  &.works__card--sm {
+  &.small {
     transform: scale(0.8);
   }
-  .works__card {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    transition: 0.5s;
-    background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-    border-radius: 1.5rem;
-    position: absolute;
-    backface-visibility: hidden;
-  }
+  &.works__card {
+    display: flex;
+    justify-content: center;
+    /* min-height: 14rem; */
+    /* margin: 0 auto 2rem; */
+    position: relative;
 
-  .works__img {
-    img {
+    font-family: $fontEn1, $fontCn;
+    font-size: 1.25rem;
+
+    &:after {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: 3s ease-out;
-      border-radius: 0.5rem;
+      background-color: rgba(0, 0, 0, 0);
+      color: rgba(255, 255, 255, 0);
+      font-weight: 900;
+      font-size: 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+      white-space: pre;
+      text-align: center;
     }
-  }
 
-  .works__des {
-    h3 {
-      margin: 0 0 1rem 0;
+    &:hover:not(.works__card--clicked) {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+      &:after {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $primary;
+      }
+
+      .works__img {
+        img {
+          transform: scale(1.2);
+        }
+      }
     }
 
-    p {
-      margin: 0 0 0.25rem 0;
+    .works__img {
+      width: 100%;
 
-      a {
-        color: #fdc300;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 3s ease-out;
+      }
+    }
+
+    .works__des {
+      display: none;
+      padding-left: 2%;
+      width: 72%;
+
+      h3 {
+        margin: 0 0 1rem 0;
+      }
+
+      p {
+        margin: 0 0 0.25rem 0;
+
+        a {
+          color: $primary;
+        }
       }
     }
   }
 
-  @media (max-width: 1000px) {
-    width: calc(80% - 2rem);
+  .works__card--clicked {
+    width: 100%;
+    padding: 1rem 5%;
+
+    &:after {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .works__des {
+      display: block;
+    }
+
+    .works__img {
+      width: 24%;
+      margin-right: 2%;
+    }
   }
 
   @media (max-width: 540px) {
