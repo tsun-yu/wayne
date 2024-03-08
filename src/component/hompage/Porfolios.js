@@ -12,19 +12,23 @@ function Portfolios(props) {
     return [...works.slice(-2), ...works, ...works.slice(0, 2)];
   }, [works]);
   const [isLoading, setIsLoading] = useState([]);
-  const [currIdx, setCurrIdx] = useState(1.5);
+  const [currIdx, setCurrIdx] = useState(1);
+  const [center, setCenter] = useState(0.5);
+  const computedIdx = useMemo(() => {
+    return currIdx + center;
+  }, [currIdx, center]);
   const [transition, setTransition] = useState(0);
   const translateX = useMemo(() => {
-    console.log(cardWidthPct, currIdx, cardWidthPct * currIdx);
-    return `${-1 * cardWidthPct * currIdx}%`;
+    return `${-1 * cardWidthPct * computedIdx}%`;
   }, [currIdx, cardWidthPct]);
 
   useEffect(() => {
-    if (currIdx !== worksLength + 1.5 && currIdx !== 0.5) return;
+    if (computedIdx !== worksLength + 1 + center && computedIdx !== center)
+      return;
     const timer = setTimeout(() => {
       setTransition(0);
-      if (currIdx === worksLength + 1.5) setCurrIdx(1.5);
-      if (currIdx === 0.5) setCurrIdx(worksLength + 0.5);
+      if (computedIdx === worksLength + 1 + center) setCurrIdx(1);
+      if (computedIdx === center) setCurrIdx(worksLength);
     }, transition);
 
     return () => clearTimeout(timer);
@@ -32,7 +36,7 @@ function Portfolios(props) {
 
   const slideHadler = (direction) => {
     const newIdx = currIdx + direction;
-    if (newIdx < 0.5 || newIdx > worksLength + 1) return;
+    if (newIdx < 0 || newIdx > worksLength + 1) return;
     setTransition(500);
     setCurrIdx(newIdx);
   };
@@ -46,8 +50,8 @@ function Portfolios(props) {
     getData();
 
     if (document.body.clientWidth <= 1000) {
-      setCurrIdx(1.875);
       setCardWidthPct(80);
+      setCenter(0.875);
     }
   }, []);
 
@@ -139,6 +143,16 @@ const Container = styled.div`
     }
   }
 
+  @media (max-width: 1000px) {
+    .works {
+      .work-section {
+        .backArea,
+        .forwardArea {
+          width: 10%;
+        }
+      }
+    }
+  }
   @media (max-width: 540px) {
     .works {
       padding-top: 3.125rem;

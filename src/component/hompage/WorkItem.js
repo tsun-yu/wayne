@@ -20,7 +20,7 @@ function WorkItem(props) {
   const backDeg = useMemo(() => (isFront ? -180 : 0), [isFront]);
   const [imgUrl, setImgUrl] = useState("");
   const cardClass = classNames({
-    "works__card--sm": currIdx + 1.5 === itemIdx || currIdx - 0.5 === itemIdx,
+    "works__card--sm": currIdx + 2 === itemIdx || currIdx === itemIdx,
   });
 
   useEffect(() => {
@@ -122,7 +122,12 @@ const Card = styled.div`
   }
 
   @media (max-width: 1000px) {
-    width: calc(80% - 2rem);
+    width: calc(80% - 1rem);
+    margin-inline: 0.5rem;
+
+    &.works__card--sm {
+      transform: scale(0.9);
+    }
   }
 
   @media (max-width: 540px) {
