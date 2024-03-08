@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 function Portfolios(props) {
   const [works, setWorks] = useState([]);
+  const [cardWidthPct, setCardWidthPct] = useState(50);
   const worksLength = useMemo(() => works.length, [works]);
   const worksListForSlide = useMemo(() => {
     return [...works.slice(-2), ...works, ...works.slice(0, 2)];
@@ -14,8 +15,9 @@ function Portfolios(props) {
   const [currIdx, setCurrIdx] = useState(1.5);
   const [transition, setTransition] = useState(0);
   const translateX = useMemo(() => {
-    return `${-25 * currIdx}%`;
-  }, [currIdx]);
+    console.log(cardWidthPct, currIdx, cardWidthPct * currIdx);
+    return `${-1 * cardWidthPct * currIdx}%`;
+  }, [currIdx, cardWidthPct]);
 
   useEffect(() => {
     if (currIdx !== worksLength + 1.5 && currIdx !== 0.5) return;
@@ -30,7 +32,7 @@ function Portfolios(props) {
 
   const slideHadler = (direction) => {
     const newIdx = currIdx + direction;
-    if (newIdx < 0.5 || newIdx > worksLength + 1.5) return;
+    if (newIdx < 0.5 || newIdx > worksLength + 1) return;
     setTransition(500);
     setCurrIdx(newIdx);
   };
@@ -42,10 +44,25 @@ function Portfolios(props) {
       setIsLoading(false);
     };
     getData();
+
+    if (document.body.clientWidth <= 1000) {
+      setCurrIdx(1.875);
+      setCardWidthPct(80);
+    }
   }, []);
 
   let worksDisplay = worksListForSlide.map(
-    ({ img, title, description, link, name, key }, i) => {
+    (
+      {
+        img = "",
+        title = "",
+        description = [],
+        link = "",
+        name = "",
+        key = "",
+      },
+      i
+    ) => {
       return (
         <WorkItem
           imgSrc={img}
@@ -76,7 +93,6 @@ function Portfolios(props) {
               style={{
                 transition: `${transition}ms`,
                 transform: `translateX(${translateX})`,
-                width: `${25 * (worksLength + 4)}%`,
               }}
             >
               {worksDisplay}
@@ -97,6 +113,7 @@ const Container = styled.div`
       width: 100%;
       padding-bottom: 1rem;
       position: relative;
+      overflow: hidden;
 
       .backArea,
       .forwardArea {
@@ -111,15 +128,13 @@ const Container = styled.div`
         left: 0;
         background: linear-gradient(270deg, #f5f5f500 0%, #f5f5f5 100%);
       }
-
       .forwardArea {
         right: 0;
         background: linear-gradient(90deg, #f5f5f500 0%, #f5f5f5 100%);
       }
-      overflow: hidden;
-
       .worksWrap {
         display: flex;
+        width: 100%;
       }
     }
   }
