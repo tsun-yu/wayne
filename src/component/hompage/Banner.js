@@ -117,13 +117,15 @@ const Cover = styled.div`
   }
 
   .cover {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     /* height: 100%; */
     min-height: calc(100dvh - 4rem);
-    width: 100%;
+    /* width: 100%; */
+    width: calc(100% - 4rem);
     background-color: #ffffff9e;
     backdrop-filter: blur(10px);
     border-radius: 1.5rem;
@@ -228,6 +230,7 @@ const Cover = styled.div`
     .cover {
       flex-wrap: wrap;
       padding: 1.5rem;
+      min-height: fit-content;
 
       .animate__flipInX {
         display: flex;
@@ -248,9 +251,13 @@ const Cover = styled.div`
     padding: 1rem;
 
     .cover {
-      min-height: calc(100dvh - 2rem);
+      width: calc(100% - 2rem);
+      /* min-height: calc(100dvh - 2rem); */
       flex-wrap: wrap;
       gap: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+
       .portrait {
         flex-basis: 90%;
 
