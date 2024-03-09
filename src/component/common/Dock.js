@@ -81,7 +81,7 @@ function Dock(props) {
     <>
       <Container>
         <div className="dock">
-          <p
+          <div
             className="dock__icon"
             onClick={() => {
               scrollTo(".about-section");
@@ -89,8 +89,8 @@ function Dock(props) {
           >
             <FcManager size={iconSize} />
             <p className="dock__text">About Me</p>
-          </p>
-          <p
+          </div>
+          <div
             className="dock__icon"
             onClick={() => {
               scrollTo(".skills");
@@ -99,8 +99,8 @@ function Dock(props) {
             {/* <FcCommandLine size={iconSize} /> */}
             <FcAndroidOs size={iconSize} />
             <p className="dock__text">Skills</p>
-          </p>
-          <p
+          </div>
+          <div
             className="dock__icon"
             onClick={() => {
               scrollTo(".works");
@@ -109,8 +109,8 @@ function Dock(props) {
             {/* <FcPicture size={iconSize} /> */}
             <FcStackOfPhotos size={iconSize} />
             <p className="dock__text">Porfolios</p>
-          </p>
-          <p
+          </div>
+          <div
             className="dock__icon"
             onClick={() => {
               scrollTo(".exp__sec");
@@ -118,8 +118,8 @@ function Dock(props) {
           >
             <FcTimeline size={iconSize} />
             <p className="dock__text">Experience</p>
-          </p>
-          <p
+          </div>
+          <div
             className="dock__icon"
             onClick={() => {
               // scrollTo(".works");
@@ -127,7 +127,7 @@ function Dock(props) {
           >
             <FcIcons8Cup size={iconSize} />
             <p className="dock__text">Buy me a coffee</p>
-          </p>
+          </div>
         </div>
       </Container>
     </>

@@ -42,11 +42,11 @@ function Banner(props) {
                 className="contact"
               >
                 <p className="contact__text">Mail</p>
-                <p className="contact__icon ">
+                <div className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiGmail size={40} color={"#d44638"} />
                   </p>
-                </p>
+                </div>
                 <SiGmail size={40} color={"#555"} />
               </a>
               <a
@@ -56,11 +56,11 @@ function Banner(props) {
                 className="contact"
               >
                 <p className="contact__text">Github</p>
-                <p className="contact__icon ">
+                <div className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiGithub size={40} color={"#6e5494"} />
                   </p>
-                </p>
+                </div>
                 <SiGithub size={40} color={"#555"} />
               </a>
               <a
@@ -70,11 +70,11 @@ function Banner(props) {
                 className="contact"
               >
                 <p className="contact__text">Linkedin</p>
-                <p className="contact__icon ">
+                <div className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiLinkedin size={40} color={"#0A66C2"} id="linkedinIcon" />
                   </p>
-                </p>
+                </div>
                 <SiLinkedin size={40} color={"#555"} />
               </a>
               <a
@@ -84,11 +84,11 @@ function Banner(props) {
                 className="contact"
               >
                 <p className="contact__text">CV</p>
-                <p className="contact__icon ">
+                <div className="contact__icon ">
                   <p className="contact__icon--hover">
                     <SiGoogledocs size={40} color={"#0F9D58"} id="docIcon" />
                   </p>
-                </p>
+                </div>
                 <SiGoogledocs size={40} color={"#555"} />
               </a>
             </div>
