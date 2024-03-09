@@ -6,6 +6,9 @@ import {
   FcAndroidOs,
   FcCommandLine,
   FcPicture,
+  FcSupport,
+  FcStackOfPhotos,
+  FcIcons8Cup,
 } from "react-icons/fc";
 
 function Dock(props) {
@@ -93,8 +96,19 @@ function Dock(props) {
               scrollTo(".skills");
             }}
           >
-            <FcCommandLine size={iconSize} />
+            {/* <FcCommandLine size={iconSize} /> */}
+            <FcAndroidOs size={iconSize} />
             <p className="dock__text">Skills</p>
+          </p>
+          <p
+            className="dock__icon"
+            onClick={() => {
+              scrollTo(".works");
+            }}
+          >
+            {/* <FcPicture size={iconSize} /> */}
+            <FcStackOfPhotos size={iconSize} />
+            <p className="dock__text">Porfolios</p>
           </p>
           <p
             className="dock__icon"
@@ -108,11 +122,11 @@ function Dock(props) {
           <p
             className="dock__icon"
             onClick={() => {
-              scrollTo(".exp__sec");
+              // scrollTo(".works");
             }}
           >
-            <FcPicture size={iconSize} />
-            <p className="dock__text">Porfolios</p>
+            <FcIcons8Cup size={iconSize} />
+            <p className="dock__text">Buy me a coffee</p>
           </p>
         </div>
       </Container>
