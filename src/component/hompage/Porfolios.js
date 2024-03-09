@@ -75,6 +75,7 @@ function Portfolios(props) {
           workLink={link}
           workName={name}
           key={key + i}
+          keyProp={key}
           currIdx={currIdx}
           itemIdx={i}
           transition={transition}

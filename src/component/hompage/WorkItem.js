@@ -8,6 +8,7 @@ function WorkItem(props) {
     imgSrc,
     workTitle,
     workDes,
+    keyProp,
     workLink,
     workName,
     currIdx,
@@ -31,11 +32,11 @@ function WorkItem(props) {
     getImg();
   }, []);
 
-  let workDesBr = workDes.map((v) => (
-    <>
+  let workDesDisplay = workDes.map((v, i) => (
+    <p key={keyProp + i}>
       {v}
       <br />
-    </>
+    </p>
   ));
 
   return (
@@ -56,7 +57,7 @@ function WorkItem(props) {
           style={{ transform: `rotateX(${backDeg}deg)` }}
         >
           <h3>{workTitle}</h3>
-          <p>{workDesBr}</p>
+          {workDesDisplay}
           <p>
             連結：
             <a href={workLink} target="_blank" rel="noreferrer">
@@ -93,6 +94,7 @@ const Card = styled.div`
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
     border-radius: 1.5rem;
+    overflow: hidden;
     position: absolute;
     backface-visibility: hidden;
   }

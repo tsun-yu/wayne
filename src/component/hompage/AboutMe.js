@@ -9,7 +9,7 @@ function AboutMe(props) {
         <div className="about-section">
           <div className="about">
             <div className="about__left">
-              <p>
+              <div>
                 我是<span className="en"> Wayne</span>
                 <br />
                 <h1>具有美感的前端工程師</h1>從
@@ -19,7 +19,7 @@ function AboutMe(props) {
                 後續也接觸了<span className="emphasis en"> Vue</span>
                 <br />
                 在前端領域不斷充實自我
-              </p>
+              </div>
             </div>
             <div className="about__content">
               <h1 className="forMobile">
@@ -81,7 +81,7 @@ const Container = styled.div`
       h1 {
         margin-bottom: 0;
       }
-      p {
+      > div {
         margin: 0 0 0.75rem;
         text-align: end;
         width: 100%;
@@ -110,7 +110,7 @@ const Container = styled.div`
         align-items: start;
         flex-basis: auto;
 
-        p {
+        > div {
           text-align: center;
         }
       }
