@@ -50,6 +50,10 @@ const Container = styled.div`
   }
 
   @media (max-width: 540px) {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: grid;
+    place-items: center;
     right: 1rem;
     bottom: 7rem;
     border-radius: 1rem;
