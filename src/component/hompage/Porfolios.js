@@ -19,6 +19,7 @@ function Portfolios(props) {
   }, [currIdx, center]);
   const [transition, setTransition] = useState(0);
   const translateX = useMemo(() => {
+    if (document.body.clientWidth <= 1000) return "0%";
     return `${-1 * cardWidthPct * computedIdx}%`;
   }, [currIdx, cardWidthPct]);
 
@@ -51,7 +52,7 @@ function Portfolios(props) {
 
     if (document.body.clientWidth <= 1000) {
       setCardWidthPct(80);
-      setCenter(0.875);
+      // setCenter(0.875);
     }
   }, []);
 
@@ -78,6 +79,7 @@ function Portfolios(props) {
           currIdx={currIdx}
           itemIdx={i}
           transition={transition}
+          worksLength={worksLength}
         />
       );
     }
@@ -115,7 +117,6 @@ const Container = styled.div`
 
     .work-section {
       width: 100%;
-      padding-bottom: 1rem;
       position: relative;
       overflow: hidden;
 
@@ -139,6 +140,7 @@ const Container = styled.div`
       .worksWrap {
         display: flex;
         width: 100%;
+        padding: 1.5rem 0 2rem;
       }
     }
   }
@@ -146,9 +148,34 @@ const Container = styled.div`
   @media (max-width: 1000px) {
     .works {
       .work-section {
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 10%;
+          height: 100%;
+          z-index: 1;
+        }
+        &::before {
+          left: 0;
+          background: linear-gradient(270deg, #f5f5f500 0%, #f5f5f5 100%);
+        }
+        &::after {
+          right: 0;
+          background: linear-gradient(90deg, #f5f5f500 0%, #f5f5f5 100%);
+        }
+
         .backArea,
         .forwardArea {
           width: 10%;
+          display: none;
+        }
+        .worksWrap {
+          overflow: auto;
+          &::-webkit-scrollbar {
+            display: none;
+          }
         }
       }
     }
@@ -156,10 +183,6 @@ const Container = styled.div`
   @media (max-width: 540px) {
     .works {
       padding-top: 3.125rem;
-
-      .work-section {
-        flex-direction: column;
-      }
     }
   }
 `;
