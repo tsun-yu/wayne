@@ -14,6 +14,7 @@ function WorkItem(props) {
     currIdx,
     itemIdx,
     transition,
+    worksLength,
   } = props;
 
   const [isFront, setIsFront] = useState(true);
@@ -22,6 +23,13 @@ function WorkItem(props) {
   const [imgUrl, setImgUrl] = useState("");
   const cardClass = classNames({
     "works__card--sm": currIdx + 2 === itemIdx || currIdx === itemIdx,
+    "works__card--copy":
+      itemIdx === 0 ||
+      itemIdx === 1 ||
+      itemIdx === worksLength + 2 ||
+      itemIdx === worksLength + 3,
+    "works__card--first": itemIdx === 2,
+    "works__card--last": itemIdx === worksLength + 1,
   });
 
   useEffect(() => {
@@ -50,6 +58,9 @@ function WorkItem(props) {
           className="works__card works__img"
           style={{ transform: `rotateX(${coverDeg}deg)` }}
         >
+          <div className="works__card--cover">
+            <h3>{workTitle}</h3>
+          </div>
           <img src={imgUrl} alt="port-img" />
         </div>
         <div
@@ -72,8 +83,8 @@ function WorkItem(props) {
 const Card = styled.div`
   width: calc(50% - 2rem);
   min-height: 20rem;
+  margin-inline: 1rem;
   aspect-ratio: 16/9;
-  margin: 1rem;
   box-sizing: border-box;
   flex-shrink: 0;
   transition: 0.5s ease-in;
@@ -86,6 +97,11 @@ const Card = styled.div`
   &.works__card--sm {
     transform: scale(0.8);
   }
+  &:hover {
+    .works__card {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
   .works__card {
     width: 100%;
     height: 100%;
@@ -97,14 +113,42 @@ const Card = styled.div`
     overflow: hidden;
     position: absolute;
     backface-visibility: hidden;
+    overflow: hidden;
   }
-
   .works__img {
+    &:hover {
+      .works__card--cover {
+        opacity: 1;
+      }
+      img {
+        transform: scale(1.2);
+      }
+    }
+    .works__card--cover {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #00000080;
+      top: 0;
+      left: 0;
+      transition: 0.3s ease-in;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+
+      h3 {
+        color: #fdc300;
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+      }
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 3s ease-out;
+      transition: 3s ease-in-out;
       border-radius: 0.5rem;
     }
   }
@@ -124,21 +168,40 @@ const Card = styled.div`
   }
 
   @media (max-width: 1000px) {
-    width: calc(80% - 1rem);
-    margin-inline: 0.5rem;
+    width: calc(80% - 2rem);
 
     &.works__card--sm {
-      transform: scale(0.9);
+      transform: scale(1);
+    }
+    &.works__card--copy {
+      display: none;
+    }
+    &.works__card--first {
+      margin-left: calc(10% + 1rem);
+    }
+    &.works__card--last {
+      margin-right: calc(10% + 1rem);
+    }
+
+    .works__img {
+      &:hover {
+        .works__card--cover {
+          opacity: 0;
+        }
+        img {
+          transform: scale(1);
+        }
+      }
     }
   }
 
   @media (max-width: 540px) {
+    aspect-ratio: 9/16;
     .works__card {
       flex-direction: column;
       width: 100%;
       padding: 0;
       margin: 0 0 2.5rem;
-      cursor: auto;
 
       &:after {
         display: none;
@@ -159,11 +222,14 @@ const Card = styled.div`
         width: 100%;
       }
     }
-
-    .works__card--clicked {
-      .works__img {
-        width: 100%;
-        margin-right: 0;
+    .works__img {
+      &:hover {
+        .works__card--cover {
+          opacity: 0;
+        }
+        img {
+          transform: scale(1);
+        }
       }
     }
   }
