@@ -6,6 +6,7 @@ import styled from "styled-components";
 function WorkItem(props) {
   const {
     imgSrc,
+    imgMSrc,
     workTitle,
     workDes,
     keyProp,
@@ -21,6 +22,7 @@ function WorkItem(props) {
   const coverDeg = useMemo(() => (isFront ? 0 : -180), [isFront]);
   const backDeg = useMemo(() => (isFront ? -180 : 0), [isFront]);
   const [imgUrl, setImgUrl] = useState("");
+  const [imgUrlM, setImgUrlM] = useState("");
   const cardClass = classNames({
     "works__card--sm": currIdx + 2 === itemIdx || currIdx === itemIdx,
     "works__card--copy":
@@ -35,7 +37,9 @@ function WorkItem(props) {
   useEffect(() => {
     const getImg = async () => {
       const url = await getImageURLFromStorage("portfolios", imgSrc);
+      const urlM = await getImageURLFromStorage("portfolios", imgMSrc);
       setImgUrl(url);
+      setImgUrlM(urlM);
     };
     getImg();
   }, []);
@@ -61,7 +65,13 @@ function WorkItem(props) {
           <div className="works__card--cover">
             <h3>{workTitle}</h3>
           </div>
-          <img src={imgUrl} alt="port-img" />
+          <div className="works__img--desktop">
+            <img src={imgUrl} alt="port-img" />
+          </div>
+
+          <div className="works__img--mobile">
+            <img src={imgUrlM} alt="port-img" />
+          </div>
         </div>
         <div
           className="works__card works__des"
@@ -144,6 +154,13 @@ const Card = styled.div`
         text-align: center;
       }
     }
+    .works__img--desktop {
+      height: 100%;
+    }
+    .works__img--mobile {
+      height: 100%;
+      display: none;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -200,29 +217,23 @@ const Card = styled.div`
     .works__card {
       flex-direction: column;
       width: 100%;
-      padding: 0;
+      padding: 0.5rem;
       margin: 0 0 2.5rem;
 
       &:after {
         display: none;
       }
-
-      &:hover:not(.works__card--clicked) {
-        .works__img {
-          img {
-            transform: scale(1, 1);
-          }
-        }
-      }
-
-      .works__des {
-        display: block;
-        box-sizing: border-box;
-        padding: 5%;
-        width: 100%;
-      }
     }
     .works__img {
+      .works__img--mobile {
+        display: block;
+      }
+      .works__img--desktop {
+        display: none;
+      }
+      img {
+        border-radius: 1rem;
+      }
       &:hover {
         .works__card--cover {
           opacity: 0;
@@ -231,6 +242,12 @@ const Card = styled.div`
           transform: scale(1);
         }
       }
+    }
+    .works__des {
+      display: block;
+      box-sizing: border-box;
+      padding: 5%;
+      width: 100%;
     }
   }
 `;
