@@ -185,7 +185,7 @@ const Cover = styled.div`
           }
 
           .contact__text {
-            /* display: block; */
+            display: block;
             background-color: #fdc300;
             color: #fff;
           }
@@ -198,16 +198,26 @@ const Cover = styled.div`
         .contact__text {
           font-family: "Poppins", "Trebuchet MS";
           position: absolute;
-          bottom: -1.5rem;
+          bottom: -3rem;
           left: 50%;
           transform: translateX(-50%);
           background-color: #fdc30000;
           border-radius: 1rem;
           color: #ffffff00;
-          padding-inline: 0.5rem;
-          /* transition: all.3s ease-in; */
+          padding: 0.5rem 1rem;
           transition-delay: 0.5s;
-          /* display: none; */
+          display: none;
+          box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.12);
+
+          &::after {
+            content: "";
+            border: 8px solid #ffffff00;
+            border-bottom: 8px solid #fdc300;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+          }
         }
 
         .contact__icon {
