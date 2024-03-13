@@ -19,7 +19,7 @@ function Portfolios(props) {
   }, [currIdx, center]);
   const [transition, setTransition] = useState(0);
   const translateX = useMemo(() => {
-    if (document.body.clientWidth <= 1000) return "0%";
+    if (window.innerWidth <= 1000) return "0%";
     return `${-1 * cardWidthPct * computedIdx}%`;
   }, [currIdx, cardWidthPct]);
 
@@ -50,7 +50,8 @@ function Portfolios(props) {
     };
     getData();
 
-    if (document.body.clientWidth <= 1000) {
+    // if (document.body.clientWidth <= 1000) {
+    if (window.innerWidth <= 1000) {
       setCardWidthPct(80);
       // setCenter(0.875);
     }
@@ -65,12 +66,14 @@ function Portfolios(props) {
         link = "",
         name = "",
         key = "",
+        img_m = "",
       },
       i
     ) => {
       return (
         <WorkItem
           imgSrc={img}
+          imgMSrc={img_m}
           workTitle={title}
           workDes={description}
           workLink={link}
@@ -114,7 +117,6 @@ function Portfolios(props) {
 const Container = styled.div`
   .works {
     width: 100%;
-    padding: 5% 0 0;
 
     .work-section {
       width: 100%;
@@ -148,6 +150,9 @@ const Container = styled.div`
 
   @media (max-width: 1000px) {
     .works {
+      hr {
+        margin-bottom: 0;
+      }
       .work-section {
         &::before,
         &::after {
@@ -183,7 +188,7 @@ const Container = styled.div`
   }
   @media (max-width: 540px) {
     .works {
-      padding-top: 3.125rem;
+      margin-top: 5%;
     }
   }
 `;

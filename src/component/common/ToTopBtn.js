@@ -12,15 +12,14 @@ function ToTopBtn(props) {
       let progressPercent =
         (100 * scrollHeight) / (documentHeight - windowHeight);
 
-      progressPercent >= 10 ? setIsShow("block") : setIsShow("none");
+      progressPercent >= 10 ? setIsShow("grid") : setIsShow("none");
     });
   }, []);
   return (
     <>
-      <Container>
+      <Container style={{ display: isShow }}>
         <BiArrowToTop
           size={50}
-          style={{ display: isShow }}
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -42,6 +41,7 @@ const Container = styled.div`
   border-radius: 5px;
   transition: 0.5s;
   cursor: pointer;
+  place-items: center;
 
   &:hover {
     background-color: #333;
@@ -52,8 +52,6 @@ const Container = styled.div`
   @media (max-width: 540px) {
     width: 3.5rem;
     height: 3.5rem;
-    display: grid;
-    place-items: center;
     right: 1rem;
     bottom: 7rem;
     border-radius: 1rem;

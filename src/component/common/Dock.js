@@ -10,9 +10,12 @@ import {
   FcStackOfPhotos,
   FcIcons8Cup,
 } from "react-icons/fc";
+import { useHistory } from "react-router-dom";
 
 function Dock(props) {
   const [iconSize, setIocnSize] = useState(60);
+  let history = useHistory();
+
   const scrollDistance = (e) =>
     e.offsetTop - document.querySelector(".navbar__home").offsetHeight;
   const scrollTo = (e) => {
@@ -34,6 +37,7 @@ function Dock(props) {
       });
     };
     Array.from(document.querySelectorAll(".dock__icon")).forEach((icon) => {
+      if (window.innerWidth <= 540) return;
       icon.addEventListener("mousemove", (e) => {
         let item = e.currentTarget;
         //該元素在螢幕的位置
@@ -96,7 +100,6 @@ function Dock(props) {
               scrollTo(".skills");
             }}
           >
-            {/* <FcCommandLine size={iconSize} /> */}
             <FcAndroidOs size={iconSize} />
             <p className="dock__text">Skills</p>
           </div>
@@ -106,7 +109,6 @@ function Dock(props) {
               scrollTo(".works");
             }}
           >
-            {/* <FcPicture size={iconSize} /> */}
             <FcStackOfPhotos size={iconSize} />
             <p className="dock__text">Porfolios</p>
           </div>
@@ -123,6 +125,7 @@ function Dock(props) {
             className="dock__icon"
             onClick={() => {
               // scrollTo(".works");
+              // history.push("/donate");
             }}
           >
             <FcIcons8Cup size={iconSize} />
@@ -141,6 +144,7 @@ const Container = styled.div`
   z-index: 9;
   display: flex;
   justify-content: center;
+  z-index: 19;
 
   .dock {
     display: flex;
