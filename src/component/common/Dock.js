@@ -144,7 +144,7 @@ const Container = styled.div`
   z-index: 9;
   display: flex;
   justify-content: center;
-  z-index: 19;
+  z-index: 17;
 
   .dock {
     display: flex;
@@ -199,6 +199,9 @@ const Container = styled.div`
         transition: 0.1s ease-in-out;
       }
     }
+  }
+  @media (max-width: 540px) {
+    z-index: 19;
   }
 `;
 
