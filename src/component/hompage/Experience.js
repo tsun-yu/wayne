@@ -5,6 +5,8 @@ import PuffLoader from "react-spinners/PuffLoader";
 
 function Experience(props) {
   const [exp, setExp] = useState([]);
+  const [beforeOpacity, setBeforeOpacity] = useState(0);
+
   const [isLoading, setIsLoading] = useState([]);
   useEffect(() => {
     const expContainer = document.querySelector(".exp__container");
@@ -12,12 +14,12 @@ function Experience(props) {
 
     expContent.addEventListener("scroll", () => {
       if (expContent.scrollTop > 1) {
-        expContainer.style.setProperty("--before-opacity", "1");
+        setBeforeOpacity(1);
         return;
       }
 
       if (expContent.scrollTop === 0) {
-        expContainer.style.setProperty("--before-opacity", "0");
+        setBeforeOpacity(0);
       }
     });
     return () => {};
@@ -55,7 +57,10 @@ function Experience(props) {
         <hr />
         <div className="exp">
           <h1>Timeline</h1>
-          <div className="exp__container">
+          <div
+            className="exp__container"
+            style={{ "--before-opacity": beforeOpacity }}
+          >
             <div className="exp__content">
               {<PuffLoader color="#fdc300" loading={isLoading} />}
               {expDisplay}
