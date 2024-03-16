@@ -138,8 +138,9 @@ const Cover = styled.div`
       border-radius: 50%;
       overflow: hidden;
       border: 0.5rem solid #fdc300;
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 4px 4px 10px 1px #33333370;
       background-color: #ffffff00;
 
