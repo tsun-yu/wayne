@@ -197,6 +197,11 @@ const Card = styled.div`
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+        &:hover {
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 3px 0px,
+            rgba(60, 64, 67, 0.15) 0px 4px 8px 3px;
+        }
       }
     }
   }
