@@ -19,10 +19,14 @@
   font-family: $fontEn1, $fontCn;
   color: #555;
 
+  hr {
+    margin-bottom: 0;
+  }
+
   .skills__container {
     width: 100%;
     overflow: auto;
-    padding: 2% 10% 3%;
+    padding: 1.5rem 10% 2.5rem;
 
     &::-webkit-scrollbar {
       display: none;
@@ -98,6 +102,8 @@
     margin-top: 5%;
 
     .skills__container {
+      overflow: visible;
+
       .skills__cards {
         flex-direction: column;
         width: 100%;

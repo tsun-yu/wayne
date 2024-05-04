@@ -45,7 +45,7 @@ function WorkItem(props) {
   }, []);
 
   let workDesDisplay = workDes.map((v, i) => (
-    <p key={keyProp + i}>
+    <p key={keyProp + i} title={v}>
       {v}
       <br />
     </p>
@@ -77,12 +77,13 @@ function WorkItem(props) {
           className="works__card works__des"
           style={{ transform: `rotateX(${backDeg}deg)` }}
         >
-          <h3>{workTitle}</h3>
-          {workDesDisplay}
-          <p>
-            連結：
+          <div>
+            <h3>{workTitle}</h3>
+            {workDesDisplay}
+          </div>
+          <p className="works__des--link">
             <a href={workLink} target="_blank" rel="noreferrer">
-              {workName}
+              前往 {workName}
             </a>
           </p>
         </div>
@@ -171,6 +172,9 @@ const Card = styled.div`
   }
 
   .works__des {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h3 {
       margin: 0 0 1rem 0;
     }
@@ -178,8 +182,21 @@ const Card = styled.div`
     p {
       margin: 0 0 0.25rem 0;
 
+      &.works__des--link {
+        text-align: center;
+      }
+
       a {
-        color: #fdc300;
+        text-decoration: none;
+        color: #fff;
+        background-color: #fdc300;
+        padding: 0.5rem 1.5rem;
+        border-radius: 2rem;
+        width: min(100%, 30rem);
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
@@ -208,6 +225,15 @@ const Card = styled.div`
         img {
           transform: scale(1);
         }
+      }
+    }
+
+    .works__des {
+      p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
       }
     }
   }
@@ -244,10 +270,13 @@ const Card = styled.div`
       }
     }
     .works__des {
-      display: block;
       box-sizing: border-box;
       padding: 5%;
       width: 100%;
+
+      p {
+        -webkit-line-clamp: 10;
+      }
     }
   }
 `;
