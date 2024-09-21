@@ -79,7 +79,7 @@ function WorkItem(props) {
         >
           <div>
             <h3>{workTitle}</h3>
-            {workDesDisplay}
+            <div className="works__des--content">{workDesDisplay}</div>
           </div>
           <p className="works__des--link">
             <a href={workLink} target="_blank" rel="noreferrer">
@@ -175,8 +175,17 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    h3 {
-      margin: 0 0 1rem 0;
+
+    > div {
+      flex-shrink: 1;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      h3 {
+        margin: 0 0 1rem 0;
+      }
     }
 
     p {
