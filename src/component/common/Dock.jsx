@@ -123,7 +123,7 @@ function Dock(props) {
           <div
             className="dock__icon"
             onClick={() => {
-              navigate("/donate");
+              // navigate("/donate");
             }}
           >
             <FcIcons8Cup size={iconSize} />
