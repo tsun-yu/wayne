@@ -7,7 +7,4 @@ export default defineConfig({
   server: {
     open: true, // 啟動開發伺服器時自動打開瀏覽器
   },
-  build: {
-    outDir: "dist", // 確保輸出目錄是 dist
-  },
 });
