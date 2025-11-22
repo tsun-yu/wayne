@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router";
 import Menu from "../Menu";
 
 function NavabarCommon(props) {
   const { resetColor, menuToggle } = props;
 
-  let history = useHistory();
+  const navigate = useNavigate();
   let location = useLocation();
   const slr = (id) => document.querySelector(id);
 
@@ -43,18 +43,18 @@ function NavabarCommon(props) {
     <>
       <header className="navbar navbar__sm ">
         <div className="navbar__progress navbar__progress--common"></div>
-        <span id="logo" onClick={() => history.push("/")}>
+        <span id="logo" onClick={() => navigate("/")}>
           WAYNE
         </span>
 
         <ul className="navbar__options">
-          <li id="nav-ports" onClick={() => history.push("/portfolios")}>
+          <li id="nav-ports" onClick={() => navigate("/portfolios")}>
             PORTFOLIOS
           </li>
-          {/* <li id="nav-resume" onClick={() => history.push("/resume")}>
+          {/* <li id="nav-resume" onClick={() => navigate("/resume")}>
             RESUME
           </li> */}
-          <li id="nav-contact" onClick={() => history.push("/contact")}>
+          <li id="nav-contact" onClick={() => navigate("/contact")}>
             CONTACT
           </li>
         </ul>

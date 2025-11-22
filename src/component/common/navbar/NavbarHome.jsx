@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-import { useHistory } from "react-router-dom";
 import Menu from "../Menu";
 import styled from "styled-components";
 import classNames from "classnames";
 
-function NavabarHome() {
+function NavbarHome() {
   const [shrinkNav, setShrinkNav] = useState(false);
   const navbarCLass = classNames({ navbar__sm: shrinkNav, navbar__home: true });
 
@@ -139,4 +138,4 @@ const NavBar = styled.header`
   }
 `;
 
-export default NavabarHome;
+export default NavbarHome;

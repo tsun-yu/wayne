@@ -21,8 +21,8 @@ function WorkItem(props) {
   const [isFront, setIsFront] = useState(true);
   const coverDeg = useMemo(() => (isFront ? 0 : -180), [isFront]);
   const backDeg = useMemo(() => (isFront ? -180 : 0), [isFront]);
-  const [imgUrl, setImgUrl] = useState("");
-  const [imgUrlM, setImgUrlM] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
+  const [imgUrlM, setImgUrlM] = useState(null);
   const cardClass = classNames({
     "works__card--sm": currIdx + 2 === itemIdx || currIdx === itemIdx,
     "works__card--copy":

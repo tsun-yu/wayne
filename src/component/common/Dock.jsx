@@ -10,12 +10,11 @@ import {
   FcStackOfPhotos,
   FcIcons8Cup,
 } from "react-icons/fc";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 function Dock(props) {
   const [iconSize, setIocnSize] = useState(60);
-  let history = useHistory();
-
+  let navigate = useNavigate();
   const scrollDistance = (e) =>
     e.offsetTop - document.querySelector(".navbar__home").offsetHeight;
   const scrollTo = (e) => {
@@ -124,8 +123,7 @@ function Dock(props) {
           <div
             className="dock__icon"
             onClick={() => {
-              // scrollTo(".works");
-              // history.push("/donate");
+              navigate("/donate");
             }}
           >
             <FcIcons8Cup size={iconSize} />

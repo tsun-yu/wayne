@@ -3,7 +3,7 @@ import { getImageURLFromStorage } from "../../util/fetchData";
 
 function WorkItem(props) {
   const { imgSrc, workTitle, workDes, workLink, workName } = props;
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
   useEffect(() => {
     const getImg = async () => {
       const url = await getImageURLFromStorage("portfolios", imgSrc);

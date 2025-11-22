@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { getImageURLFromStorage } from "../../util/fetchData";
 
 function Banner(props) {
-  const [portraitUrl, setPortraitUrl] = useState("");
+  const [portraitUrl, setPortraitUrl] = useState(null);
   const [cvUrl, setCvUrl] = useState("");
   useEffect(() => {
     const getImg = async () => {

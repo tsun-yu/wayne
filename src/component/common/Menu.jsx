@@ -1,9 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 function Menu(props) {
   const { menuToggle } = props;
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -13,7 +13,7 @@ function Menu(props) {
             id="menu-home"
             onClick={() => {
               menuToggle("out");
-              history.push("/");
+              navigate("/");
             }}
           >
             HOME
@@ -22,7 +22,7 @@ function Menu(props) {
             id="menu-ports"
             onClick={() => {
               menuToggle("out");
-              history.push("/portfolios");
+              navigate("/portfolios");
             }}
           >
             PORTFOLIOS
@@ -31,7 +31,7 @@ function Menu(props) {
             id="menu-resume"
             onClick={() => {
               menuToggle("out");
-              history.push("/resume");
+              navigate("/resume");
             }}
           >
             RESUME
@@ -40,7 +40,7 @@ function Menu(props) {
             id="menu-contact"
             onClick={() => {
               menuToggle("out");
-              history.push("/contact");
+              navigate("/contact");
             }}
           >
             CONTACT
